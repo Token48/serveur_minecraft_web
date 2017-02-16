@@ -37,10 +37,7 @@ $config['Sminecraft']['queyport'] = 25565; //query port (query.port dans server.
 $config['Sminecraft']['portrcon'] = 25575; //port rcon (rcon.port dans server.properties)
 $config['Sminecraft']['passrcon'] = ''; // Mot de pass pour acéder a rcon (rcon.password dans server.properties)
 
-//fopen("ftp://user:password@example.com/somefile.txt", "w"); NE PAS DECOMENTER CETTE LIGNE
-//
 //$config['Sminecraft']['serverproperties'] = 'ftp://'.$config['Sminecraft']['username'].':'.$config['Sminecraft']['password'].'@'.$config['Sminecraft']['adresse'].'/chemin pour accéder à/server.properties';
-
 
 $config['minecraft_site']['navbar'] = true; //affiche la barre de navigation si True
 $config['minecraft_site']['footer'] = true; //affiche le bas de page si True
