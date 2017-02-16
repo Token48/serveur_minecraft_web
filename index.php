@@ -26,7 +26,7 @@ $user = null;
 if (!isset($config['Language']['pays'])) {
     $config['Language']['pays'] = 'fr';
 }
-require_once(__DIR__ . 'langues/index_' . $config['Language']['pays'] . '.php');
+require_once($config['Chemin']['site'] . '/langues/index_' . $config['Language']['pays'] . '.php');
 
 // recuperer eventuel message
 $message = (isset($_POST['message'])) ? $_POST['message'] : '';

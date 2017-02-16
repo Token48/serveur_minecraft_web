@@ -35,7 +35,7 @@ Based upon the following work:
 define("SERVERDATA_EXECCOMMAND", 2);
 define("SERVERDATA_AUTH", 3);
 define('RCONCLASSPHP', 'RCONCLASSPHP)');
-require_once($config['Chemin']['site'] . 'langues/Rcon.class.' . $config['Language']['pays'] . '.php');
+require_once($config['Chemin']['site'] . '/langues/Rcon.class.' . $config['Language']['pays'] . '.php');
 
 class RCon
 {

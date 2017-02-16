@@ -25,7 +25,7 @@ $config['Database']['port'] = 3306; //numéro de port de la base de données (g�
 $config['Language']['pays'] = 'fr'; //Français
 
 //Chemin du complet du site
-//$config['Chemin']['site'] = str_replace('\\', '/', getcwd()) . '/';
+$config['Chemin']['site'] = __DIR__;
 
 //Url serveur minecraft
 //Vous devez activer query et rcon dans server.properties pour que cela fonctionne

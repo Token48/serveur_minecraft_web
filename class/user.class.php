@@ -3,8 +3,8 @@ if (!defined('INDEXPHP') && !defined('LOGINPHP')) {
     header('location: index.php');
     exit();
 }
-require_once($config['Chemin']['site'] . 'langues/class_user_' . $config['Language']['pays'] . '.php');
-require_once($config['Chemin']['site'] . 'langues/errmysql_' . $config['Language']['pays'] . '.php');
+require_once($config['Chemin']['site'] . '/langues/class_user_' . $config['Language']['pays'] . '.php');
+require_once($config['Chemin']['site'] . '/langues/errmysql_' . $config['Language']['pays'] . '.php');
 
 /**
  * la classe user sert à gérer l'utilisateur actuellement connecté sur le site.
