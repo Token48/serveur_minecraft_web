@@ -13,6 +13,7 @@ function generepagehtml($tblhtml, $mess_translate)
     $serverproterties = '';
     $serverprotertiesform = "";
     global $config;
+    global $user;
     require_once('langues/index_' . $config['Language']['pays'] . '.php');
     if (defined('DEBUG')) {
         var_dump($config['Language']['pays']);
@@ -126,9 +127,15 @@ function generepagehtml($tblhtml, $mess_translate)
                 //break;
             case 'serveurproperties':
                 $tblserverproperties = readserverproperties($config['Sminecraft']['serverproperties']);
-                $tblproperties = generate_tb_properties($tblserverproperties);
-                $serverproterties = str_replace('[[PROPERTIE-VALUE]]', $tblproperties, $serverproterties);
-                $body .= $serverproterties;
+                if ($user->lvl() != 4) {
+                    $tblproperties = generate_tb_properties($tblserverproperties);
+                    $serverproterties = str_replace('[[PROPERTIE-VALUE]]', $tblproperties, $serverproterties);
+                    $body .= $serverproterties;
+                } else {
+                    $formproperties = generate_form_serverproperties($tblserverproperties); //générer le formulaire
+                    $serverprotertiesform = str_replace('[[INPUTFORM]]', $formproperties, $serverprotertiesform);
+                    $body .= $serverprotertiesform;
+                }
                 break;
             default:
                 //Login user
