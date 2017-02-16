@@ -50,7 +50,7 @@ function generepagehtml($tblhtml, $mess_translate)
             $body .= $messageformat;
         }
         switch ($tblhtml['section']) {
-            case 'infoserveur': //Page par défaut si utilisateur logué
+            case 'infoserveur': //Page par défaut si l'utilisateur est logué
                 $Infofr = $tblhtml['Query']->GetInfo();
                 if ($Infofr !== false):
                     $infoleft = '';
