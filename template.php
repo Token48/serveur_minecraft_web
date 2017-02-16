@@ -83,7 +83,7 @@ function generepagehtml($tblhtml, $mess_translate)
                             $ctrllvlsql = false; //Problème avec MySQL on ne contrôle pas le lvl
                         }
                         foreach ($Players as $Player) {
-                            $lvl = 0;
+                            $lvl = 0; //Par défaut lvl du joueur à 0
                             if ($ctrllvlsql) {
                                 $uname = $mysqli->real_escape_string($Player);
                                 $requete = "SELECT utilisateurs.levelutilisateur_lvlmembre FROM utilisateurs WHERE utilisateurs.username = '$uname'";
