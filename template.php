@@ -8,8 +8,6 @@ function generepagehtml($tblhtml, $mess_translate)
     $navbar = '';
     $footer = '';
     $login = '';
-    $affserverpropertiesHaut = '';
-    $affserverpropertiesBas = '';
     $infoserveur = '';
     $notinfoserveur = '';
     $serverproterties = '';
@@ -34,12 +32,12 @@ function generepagehtml($tblhtml, $mess_translate)
         $body .= $navbar;
     }
     $body .= $banniere;
-    if (isset($Exception)):
+    if (isset($Exception)) {
         $body .= "<div class=\"panel panel-primary\">
                         <div class=\"panel-heading\">" . htmlspecialchars($Exception->getMessage()) . "</div>
                         <p>" . nl2br($Exception->getTraceAsString(), false) . "</p>
                 </div>";
-    else:
+    } else {
         if ($tblhtml['message'] != '') {
             //Générer Alert
             //exemple:
@@ -52,7 +50,7 @@ function generepagehtml($tblhtml, $mess_translate)
             $body .= $messageformat;
         }
         switch ($tblhtml['section']) {
-            case 'infoserveur': //Page par defaut si utilisateur logué
+            case 'infoserveur': //Page par défaut si utilisateur logué
                 $Infofr = $tblhtml['Query']->GetInfo();
                 if ($Infofr !== false):
                     $infoleft = '';
@@ -78,20 +76,43 @@ function generepagehtml($tblhtml, $mess_translate)
                     $infoleft . "                </tr>";
                     $infoserveur = translate_message($infoserveur, array('{{infoleft}}' => $infoleft));
                     $infoplayers = '';
-                    if (($Players = $tblhtml['Query']->GetPlayers()) !== false):
-                        $member = new mysqli($config['Database']['host'], $config['Database']['dbuser'], $config['Database']['dbpass'], $config['Database']['dbname'], $config['Database']['port']);
-                        foreach ($Players as $Player):
-                            //TODO recupérer le lvl du joueur
+                    if (($Players = $tblhtml['Query']->GetPlayers()) !== false) {
+                        $ctrllvlsql = true; //Par défaut on contrôle le lvl utilisateur
+                        $mysqli = new mysqli($config['Database']['host'], $config['Database']['dbuser'], $config['Database']['dbpass'], $config['Database']['dbname'], $config['Database']['port']);
+                        if ($mysqli->connect_errno) {
+                            $ctrllvlsql = false; //Problème avec MySQL on ne contrôle pas le lvl
+                        }
+                        foreach ($Players as $Player) {
                             $lvl = 0;
+                            if ($ctrllvlsql) {
+                                $uname = $mysqli->real_escape_string($Player);
+                                $requete = "SELECT utilisateurs.levelutilisateur_lvlmembre FROM utilisateurs WHERE utilisateurs.username = '$uname'";
+                                $result = $mysqli->query($requete);
+                                if ($result) {
+                                    //lvl trouvé
+                                    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                                        foreach ($row as $key => $don) {
+                                            $lvl = $don; //Récupérer le lvl
+                                        }
+                                    }
+                                }
+                            }
                             $infoplayers .= "                <tr>
-                    <td class\"lvluser" . $lvl . "\">" . htmlspecialchars($Player) . "</td>
+                    <td><span  class=\"lvluser" . $lvl . "\">" . htmlspecialchars($Player) . "</span></td>
                 </tr>";
-                        endforeach;
-                    else:
+                        }
+                        if ($ctrllvlsql) {
+                            //Fermer MySQL
+                            $closemysqli = $mysqli->close();
+                            if (!$closemysqli) {
+                                throw new Exception(MESS_ERREURCLOSEMYSQL);
+                            }
+                        }
+                    } else {
                         $infoplayers .= "                <tr>
                     <td>{{MESS_NOTPLAYERSFOUND}}</td>
                 </tr>";
-                    endif;
+                    }
                     $infoserveur = str_replace('[[TIMER]]', $tblhtml['timer'], $infoserveur);
                     $infoserveur = str_replace('[[JOUEURS]]', $infoplayers, $infoserveur);
                     $body .= $infoserveur;
@@ -119,7 +140,7 @@ function generepagehtml($tblhtml, $mess_translate)
                 //Login user
                 $body .= $login;
         }
-    endif;
+    }
     if ($config['minecraft_site']['footer']) {
         $body .= $footer;
     }
