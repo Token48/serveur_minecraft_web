@@ -11,7 +11,8 @@ function generepagehtml($tblhtml, $mess_translate)
     $infoserveur = '';
     $notinfoserveur = '';
     $serverproterties = '';
-
+    $serverprotertiesform = "";
+    global $config;
     require_once('langues/index_' . $config['Language']['pays'] . '.php');
     if (defined('DEBUG')) {
         var_dump($config['Language']['pays']);
