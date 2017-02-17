@@ -103,10 +103,24 @@ function writeserverproperties($tblproperties)
  */
 function generate_form_serverproperties($tableau)
 {
+    global $config;
     $input = '';
     $tdx = 1;
     if (is_array($tableau)) {
+        try {
+            $handle = fopen($config['Chemin']['site'] . '/list_properties_of_server.txt', 'rb');
+            $i = 0;
+            while (!feof($handle)) {
+                /* On lit la ligne courante */
+                $buffer[$i] = trim(fgets($handle));
+                $i++;
+            }
+            fclose($handle);
+        } catch (Exception $err) {
+            $GLOBALS['message'] = $err->getMessage();
+        }
         foreach ($tableau as $name => $value) {
+            //todo comparer si $name est dans le tableau $buffer et effacer l'entrée dans dans tableau $buffer si c'est le cas
             $tdx = ($tdx == 1) ? 2 : 1;
             $input .= "          <div class=\"form-group has-feedback\">
               <label for=\"$name\" class=\"col-sm-4 control-label td" . $tdx . "color1\" contenteditable=\"true\">$name</label>
