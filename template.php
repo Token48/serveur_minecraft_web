@@ -88,6 +88,7 @@ function generepagehtml($tblhtml, $mess_translate)
                             if ($ctrllvlsql) {
                                 $uname = $mysqli->real_escape_string($Player);
                                 $requete = "SELECT utilisateurs.levelutilisateur_lvlmembre FROM utilisateurs WHERE utilisateurs.username = '$uname'";
+                                //Rechercher la personne qui se trouve sur le serveur est dans la base de données
                                 $result = $mysqli->query($requete);
                                 if ($result) {
                                     //lvl trouvé
@@ -96,6 +97,9 @@ function generepagehtml($tblhtml, $mess_translate)
                                             $lvl = $don; //Récupérer le lvl
                                         }
                                     }
+                                } else {
+                                    //On peut eventuellement ici kické la personne du serveur si elle n'est pas inscrit ici
+                                    //à l'aide d'une commande rcon...
                                 }
                             }
                             $infoplayers .= "                <tr>
