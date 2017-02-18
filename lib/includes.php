@@ -240,7 +240,7 @@ function validate_session($hashsession)
 *         @subject : string
 *         @cur     : int
 *
-*  Note : if $cur is empty only the first occurence of $search will be replace else the function will take the next occurence after $cur (int position)
+*  Note : if $cur is empty only the first occurrence of $search will be replace else the function will take the next occurrence after $cur (int position)
 *
 *  return string
 */
@@ -258,5 +258,5 @@ function ustr_replace($search, $replace, $subject, $cur = 0)
         $subject = substr_replace($subject, $replace, (int)strpos($subject, $search, $cur), strlen($search));
     }
     return $subject;
-}//ustr_replace
+}
 ?>

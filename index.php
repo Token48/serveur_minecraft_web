@@ -20,7 +20,7 @@ require_once('config.php');
 //Activer ou désactiver le lien configuration de Navbar
 $configserverproperties = (isset($config['Sminecraft']['serverproperties'])) ? $config['Sminecraft']['serverproperties'] : '';
 if ($configserverproperties == ''){
-    $menuconfigonoff = '<span data="Je n\'ai pas accès au fichier de configuration.">{{MESS_PROPERTIE}}</span>'; //Pas de fichier server.properties configuré
+    $menuconfigonoff = '<span>{{MESS_PROPERTIE}}</span>'; //Pas de fichier server.properties configuré
 } else {
     $menuconfigonoff = '<a href="?section=serveurproperties">{{MESS_PROPERTIE}}</a>';
 }
