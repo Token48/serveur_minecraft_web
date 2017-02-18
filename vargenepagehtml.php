@@ -20,7 +20,7 @@ $header = "<!DOCTYPE html>
     <title>Serveur Minecraft</title>
      
     <!-- BOOSTRAP EST UN FRAMEWORK CSS QUI PERMET DE STYLISER LE CODE CI-DESSOUS, CA CODE LE CSS A VOTRE PLACE -->
-    <link rel=\"stylesheet\" href=\"css/mcs_bootstrap.css#?wxdfg=". date('Hi')."\">
+    <link rel=\"stylesheet\" href=\"css/mcs_bootstrap.css\">
     <script src=\"js/jquery.js\"></script>
     <script src=\"js/bootstrap.js\"></script>
     [[STYLEPERSO]]
