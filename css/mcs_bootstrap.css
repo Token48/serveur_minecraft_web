@@ -8256,18 +8256,34 @@ body {
 
 .td1color1 {
     background: #eee;
+    padding-bottom: 7px;
 }
 
 .td1color2 {
     background: #fff;
+    padding-bottom: 7px;
 }
+
 
 .td2color1 {
     background: #ddd;
+    padding-bottom: 7px;
 }
+
 
 .td2color2 {
     background: #eee;
+    padding-bottom: 7px;
+}
+
+.td10color1 {
+    background: #f4d19b;
+    padding-bottom: 7px;
+}
+
+.td11color1 {
+    background: #f9e9ad;
+    padding-bottom: 7px;
 }
 
 .lvluser0 {
@@ -8288,4 +8304,11 @@ body {
 
 .lvluser4 {
     color: #F00;
+}
+
+.navbar-nav > li > span {
+    padding: 15px;
+    line-height: 20px;
+    display: block;
+    color: #afafaf;
 }

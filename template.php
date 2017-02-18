@@ -30,6 +30,7 @@ function generepagehtml($tblhtml, $mess_translate)
             $navbaruser = '';
         }
         $navbar = str_replace('[[USERNAME]]', $navbaruser, $navbar);
+        $navbar = str_replace('[[MENUCONFIGONOFF]]', $tblhtml['menuconfigonoff'], $navbar);
         $body .= $navbar;
     }
     $body .= $banniere;

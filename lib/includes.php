@@ -47,7 +47,7 @@ function retMktimest($dbdate)
  */
 function readserverproperties($configfile)
 {
-    global $config, $user;
+    global $user;
     $serverproperties = array();
     try {
         if ($configfile != '') {
@@ -76,9 +76,6 @@ function readserverproperties($configfile)
                         }
                     }
                 }
-                if ($config['DEBUG']) {
-                    var_dump($serverproperties);
-                }
                 /* On ferme le fichier */
                 fclose($handle);
             }
@@ -89,11 +86,36 @@ function readserverproperties($configfile)
     return $serverproperties;
 }
 
-function writeserverproperties($tblproperties)
+function writeserverproperties($configfile, $tblproperties)
 {
-    $debfile = "#Minecraft server properties
-#" . date('D M H:i:s T Y');
-    //todo finaliser la sauvegarde de server properties
+    $debfile = "#Minecraft server properties\n#" . date('D M d H:i:s T Y');
+    try {
+        $handle = fopen($configfile, 'wb'); // ouvrir server.properties en lecture
+        //$handle = true;
+        if ($handle) {
+            fputs($handle,$debfile."\n");
+            foreach ($tblproperties as $key => $don) {
+                $pos_ = strpos($key, '_');
+                if ($pos_ === 0){
+                    //premier caractère = '_' donc c'est une propriété non déclarée dans le fichier server.properties
+                    if ($don != '') {
+                        //Il lui a été attribué une valeur
+                        $trans = array("_" => "");
+                        $key = strtr($key, $trans); //supprimer _ au debut du nom de la propriété
+                    }
+                }
+                $pos_ = strpos($key, '_');
+                if ($pos_ !== 0){
+                    //Deuxième contrôle au cas ou $key ne commence pas '_' (suppression de '_')
+                    fputs($handle,$key.'='.$don."\n");
+                }
+            }
+            fclose($handle);
+        }
+    } catch (Exception $err) {
+        $GLOBALS['message'] = $err->getMessage();
+    }
+
 }
 
 /**
@@ -107,31 +129,57 @@ function generate_form_serverproperties($tableau)
     $input = '';
     $tdx = 1;
     if (is_array($tableau)) {
+        //------------------------------------------
         try {
             $handle = fopen($config['Chemin']['site'] . '/list_properties_of_server.txt', 'rb');
             $i = 0;
             while (!feof($handle)) {
                 /* On lit la ligne courante */
-                $buffer[$i] = trim(fgets($handle));
-                $i++;
+                $buffer = trim(fgets($handle));
+                if ($buffer[0] != '#') {
+                    //si la ligne n'est pas un commentaire'
+                    $tblpropertie[$i] = $buffer;
+                    $i++;
+                }
             }
             fclose($handle);
         } catch (Exception $err) {
             $GLOBALS['message'] = $err->getMessage();
         }
+        //------------------------------------------
         foreach ($tableau as $name => $value) {
-            //todo comparer si $name est dans le tableau $buffer et effacer l'entrée dans dans tableau $buffer si c'est le cas
             $tdx = ($tdx == 1) ? 2 : 1;
+            for ($i = 0; $i < count($tblpropertie); $i++ ){
+                if ($tblpropertie[$i] == $name){
+                    //la propriété existe on l'efface du tableau'
+                    array_splice($tblpropertie, $i, 1);
+                }
+            }
             $input .= "          <div class=\"form-group has-feedback\">
               <label for=\"$name\" class=\"col-sm-4 control-label td" . $tdx . "color1\" contenteditable=\"true\">$name</label>
             <div class=\"col-sm-8\">
-              <input type=\"text\" class=\"form-control\" id=\"$name\" name=\"$name\" value=\"$value\">
+              <input type=\"text\" class=\"form-control\" id=\"$name\" name=\"servprop[$name]\" value=\"$value\">
             </div>
           </div>
 ";
         }
+        //------------------------------------------
+        //ici on rajoute un '_' devant la valeur de l'attribut name de la balise input
+        //pour indiquer lors de la sauvegarde que cette propriété n'y étais à l'origine
+        $tdx=10;
+        for ($i = 0; $i < count($tblpropertie); $i++){
+            $tdx = ($tdx == 10) ? 11 : 10;
+            //Générer les propriété manquantes du fichier server.properties
+            $input .= "          <div class=\"form-group has-feedback\">
+              <label for=\"$tblpropertie[$i]\" class=\"col-sm-4 control-label td" . $tdx . "color1\" contenteditable=\"false\">$tblpropertie[$i]</label>
+            <div class=\"col-sm-8\">
+              <input type=\"text\" class=\"form-control\" id=\"$tblpropertie[$i]\" name=\"servprop[_$tblpropertie[$i]]\" placeholder=\"{{MESS_PROPERTIEUNDECLARED}}\">
+            </div>
+          </div>
+";
+        }
+        //------------------------------------------
         $result = $input;
-
     } else {
         $result = '<p>Server properties invalide!<p>';
     }
