@@ -21,7 +21,6 @@ $header = "<!DOCTYPE html>
      
     <!-- BOOSTRAP EST UN FRAMEWORK CSS QUI PERMET DE STYLISER LE CODE CI-DESSOUS, CA CODE LE CSS A VOTRE PLACE -->
     <link rel=\"stylesheet\" href=\"css/mcs_bootstrap.css\">
-    <!--<link rel=\"stylesheet\" href=\"css/bootstrap-theme.css\">-->
     <script src=\"js/jquery.js\"></script>
     <script src=\"js/bootstrap.js\"></script>
     [[STYLEPERSO]]
@@ -67,7 +66,7 @@ $navbar = "<!--  NavBar -->
                                     <a href=\"index.php\">{{MESS_ACCUEIL}}</a>
                                 </li>
                                 <li>
-                                    <a href=\"?section=serveurproperties\">{{MESS_PROPERTIE}}</a>
+                                    [[MENUCONFIGONOFF]]
                                 </li>
                                 <li>
                                     <a href=\"#\">{{MESS_CONTACT}}</a>
@@ -107,7 +106,7 @@ $banniere = "<!-- Banniere -->
 $login = "<!-- MESS_LOGIN -->
 <div class=\"container\">
     <div class=\"row\">
-        <div class=\"col-md-12 messlogin\">
+        <div class=\"col-md-12 backgrdmesslogin\">
             <label class=\"control-label\">{{MESS_LOGIN}}</label>
         </div>
     </div>

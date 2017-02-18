@@ -36,3 +36,4 @@ $mess_translate['{{MESS_CBSAVEUSER}}'] = 'Rester connecté.';
 $mess_translate['{{MESS_PROPERTIES}}'] = 'Propriétées';
 $mess_translate['{{MESS_VALUES}}'] = 'Valeurs';
 $mess_translate['{{MESS_RELOADMC}}'] = 'alert-warning,Minecraft,Vous devez redémarrer le serveur pour que les modifications soient prises en compte.';
+$mess_translate['{{MESS_PROPERTIEUNDECLARED}}'] = 'Cette propriété n\'est pas déclarée.';
