@@ -4,7 +4,7 @@ max-tick-time
 generator-settings
 force-gamemode
 allow-nether
-gamemode
+gamemode=
 enable-query
 player-idle-timeout
 difficulty
