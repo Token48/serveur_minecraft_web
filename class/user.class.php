@@ -130,10 +130,12 @@ class user
                     // expiration
                     if (retMktimest($session['expire']) < time()) {
                         setcookie('sessionhash', NULL, -1); // Effacer le cookie de session
+                        $session['idsession'] = $mysqli->real_escape_string($session['idsession']);
                         $result = $mysqli->query("DELETE FROM `session` WHERE `idsession` = '" . $session['idsession'] . "';"); // on efface l'entrée dans la base de donnée
                         throw new Exception(MESS_ERREURSESSIONEXPIRE); // session expirée
                     } else {
                         //Session valide et utilisateur valide
+                        $session['utilisateurs_iduser'] = $mysqli->real_escape_string($session['utilisateurs_iduser']);
                         $requete = "SELECT `iduser`, `username`, `date_inscription`, `email`, `password`, `ipuser`, `bannissement`, `levelutilisateur_lvlmembre` FROM `utilisateurs` WHERE `iduser` = '" . $session['utilisateurs_iduser'] . "';";
                         $result = $mysqli->query($requete);
                         if ($result) {
@@ -249,17 +251,18 @@ class user
         global $config;
         $retour = true; // par defaut
         $mysqli = new mysqli($config['Database']['host'], $config['Database']['dbuser'], $config['Database']['dbpass'], $config['Database']['dbname'], $config['Database']['port']);
+        $sqlusersession = $mysqli->real_escape_string($this->_user_id);
         if (is_null($sessionhash)) {
             //nouvelle entrée
             $graine = time() + $this->_user_id;
             $this->_user_session = sha1($graine);
             //Effacer toute les sessions ouverte pour cette utilisateur
-            $result = $mysqli->query("DELETE FROM `session` WHERE `utilisateurs_iduser` = '" . $this->_user_id . "';");
+            $result = $mysqli->query("DELETE FROM `session` WHERE `utilisateurs_iduser` = '$sqlusersession';");
             //Ouvrir une nouvelle session
             $requete = "INSERT INTO `session` VALUES (NULL, '$this->_user_session',";
             $requete .= " '" . date('Y-m-d H:i:s', time() + (24 * 60 * 60)) . "', " . $this->_user_id . ")";
         } else {
-            $requete = "UPDATE `spigot`.`session` SET `expire`='" . date('Y-m-d H:i:s', time() + (24 * 60 * 60)) . "' WHERE  `utilisateurs_iduser`='$this->_user_id';";
+            $requete = "UPDATE `spigot`.`session` SET `expire`='" . date('Y-m-d H:i:s', time() + (24 * 60 * 60)) . "' WHERE  `utilisateurs_iduser`='$sqlusersession';";
         }
         $result = $mysqli->query($requete);
         if (!$result) {
