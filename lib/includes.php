@@ -1,30 +1,6 @@
 <?php
 
 /**
- * make an http POST request and return the response content
- * @param string $url url of the requested script
- * @param array $data hash array of request variables
- * @return Return a string containing the generated html page
- */
-function http_post($url, $data)
-{
-    $data_url = http_build_query($data);
-    $data_len = strlen($data_url);
-    $http_response_header = array(
-        'HTTP/1.1 200 OK',
-        'Connection: close'
-    );
-    $content = file_get_contents($url, false, stream_context_create(array(
-        'http' => array(
-            'method' => 'POST',
-            'header' => "Connection: close\r\nContent-Length: $data_len\r\nContent-type: application/x-www-form-urlencoded\r\nContent-Language: fr\r\n",
-            'content' => $data_url
-        )
-    )));
-    return $content;
-}
-
-/**
  * return mktime from a db (mysql) datetime (Y-m-d H:i:s)
  *
  * @param string $dbdate
@@ -43,7 +19,7 @@ function retMktimest($dbdate)
  *
  * @param
  *            chemin du fichier de configuration ($config['Sminecraft']['serverproperties'])
- * @return string Formulaire HTML
+ * @return array Formulaire HTML
  */
 function readserverproperties($configfile)
 {
@@ -126,6 +102,7 @@ function writeserverproperties($configfile, $tblproperties)
 function generate_form_serverproperties($tableau)
 {
     global $config;
+    $tblpropertie = array();
     $input = '';
     $tdx = 1;
     if (is_array($tableau)) {
@@ -193,7 +170,7 @@ function generate_form_serverproperties($tableau)
  */
 function generate_tb_properties($tableau)
 {
-    //                            <td class="td1color1">[[PROPERTIE]]</td><td class="td1color2">[[VALEUR]]</td>
+    //                            <td class="td1color1">{{PROPERTIE}}</td><td class="td1color2">{{VALEUR}}</td>
     $tbl = '';
     $tdx = 1;
     foreach ($tableau as $name => $value) {
@@ -208,7 +185,7 @@ function generate_tb_properties($tableau)
 /**
  * Controller la validiter de la session
  * @param $hashsession
- * @return pointeur sur le resultat ou -1
+ * @return bool|mysqli_result
  */
 function validate_session($hashsession)
 {

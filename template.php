@@ -12,25 +12,44 @@ function generepagehtml($tblhtml, $mess_translate)
     $notinfoserveur = '';
     $serverproterties = '';
     $serverprotertiesform = "";
-    global $config;
-    global $user;
+    $config = $tblhtml['config'];
+    $user = $tblhtml['user'];
+    $username = ($user != null) ? $user->username() : ''; //si loguer $username $ $user->username(), dans le cac contraire on vide $username
     require_once('langues/index_' . $config['Language']['pays'] . '.php');
+
     if (defined('DEBUG')) {
         var_dump($config['Language']['pays']);
     }
+
     $messageformat = '';
     include_once('vargenepagehtml.php');
 
     if ($config['minecraft_site']['navbar']) {
-        if ($tblhtml['username'] != '') {
+        //déterminer quel partie du menu est actif
+        switch ($tblhtml['section']) {
+            case "serveurproperties":
+                $navbar = str_replace('{{ACTIVEACUEIL}}', '', $navbar);
+                $navbar = str_replace('{{ACTIVECONF}}', ' class="active"', $navbar);
+                $navbar = str_replace('{{ACTIVECONTACT}}', '', $navbar);
+                break;
+            default:
+                $navbar = str_replace('{{ACTIVEACUEIL}}', ' class="active"', $navbar);
+                $navbar = str_replace('{{ACTIVECONF}}', '', $navbar);
+                $navbar = str_replace('{{ACTIVECONTACT}}', '', $navbar);
+        }
+    }
+
+    if ($config['minecraft_site']['navbar']) {
+        $navbar = str_replace('{{ETATSERV}}', $tblhtml['etatserv'], $navbar);
+        if ($username != '') {
             $navbaruser = "                                <li>
-                                    <a href=\"#\">" . $tblhtml['username'] . "</a>
+                                    <a href=\"#\"><span class=\"glyphicon glyphicon-log-in\"></span>&nbsp;&nbsp;$username</a>
                                 </li>";
         } else {
             $navbaruser = '';
         }
-        $navbar = str_replace('[[USERNAME]]', $navbaruser, $navbar);
-        $navbar = str_replace('[[MENUCONFIGONOFF]]', $tblhtml['menuconfigonoff'], $navbar);
+        $navbar = str_replace('{{USERNAME}}', $navbaruser, $navbar);
+        $navbar = str_replace('{{MENUCONFIGONOFF}}', $tblhtml['menuconfigonoff'], $navbar);
         $body .= $navbar;
     }
     $body .= $banniere;
@@ -119,8 +138,8 @@ function generepagehtml($tblhtml, $mess_translate)
                     <td>{{MESS_NOTPLAYERSFOUND}}</td>
                 </tr>";
                     }
-                    $infoserveur = str_replace('[[TIMER]]', $tblhtml['timer'], $infoserveur);
-                    $infoserveur = str_replace('[[JOUEURS]]', $infoplayers, $infoserveur);
+                    $infoserveur = str_replace('{{TIMER}}', $tblhtml['timer'], $infoserveur);
+                    $infoserveur = str_replace('{{JOUEURS}}', $infoplayers, $infoserveur);
                     $body .= $infoserveur;
                 else:
                     //$body .= $infoserveur;
@@ -134,11 +153,11 @@ function generepagehtml($tblhtml, $mess_translate)
                 $tblserverproperties = readserverproperties($config['Sminecraft']['serverproperties']);
                 if ($user->lvl() != 4) {
                     $tblproperties = generate_tb_properties($tblserverproperties);
-                    $serverproterties = str_replace('[[PROPERTIE-VALUE]]', $tblproperties, $serverproterties);
+                    $serverproterties = str_replace('{{PROPERTIE-VALUE}}', $tblproperties, $serverproterties);
                     $body .= $serverproterties;
                 } else {
                     $formproperties = generate_form_serverproperties($tblserverproperties); //générer le formulaire
-                    $serverprotertiesform = str_replace('[[INPUTFORM]]', $formproperties, $serverprotertiesform);
+                    $serverprotertiesform = str_replace('{{INPUTFORM}}', $formproperties, $serverprotertiesform);
                     $body .= $serverprotertiesform;
                 }
                 break;
@@ -152,7 +171,7 @@ function generepagehtml($tblhtml, $mess_translate)
     }
     $body .= "</body>
 </html>";
-    $header = str_replace('[[STYLEPERSO]]', $tblhtml['styleperso'], $header);
+    $header = str_replace('{{STYLEPERSO}}', $tblhtml['styleperso'], $header);
     return $header . translate_message($body, $mess_translate);
 }
 

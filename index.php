@@ -11,11 +11,23 @@
  * https://docs.spongepowered.org/stable/fr/server/getting-started/configuration/server-properties.html *
  *                                       info server.properties                                         *
  ********************************************************************************************************/
+
 define('INDEXPHP', 'INDEXPHP');
 $section = (isset($_POST['section'])) ? $_POST['section'] : ((isset($_GET['section'])) ? $_GET['section'] : ''); //initaliser section
-require_once('config.php');
 
-//global $config;
+require_once('config.php');
+require_once('minecraft.php');
+
+$gotimer = microtime();
+$rcon = rcon($config);
+$Query = '';
+if ($rcon) {
+    $Query = query($rcon, $config); //Recupérer status serveur
+}
+$endtime = microtime();
+$timer = round($endtime - $gotimer, 4); // arrondir au 10 000 de secondes
+$etatserv = ($rcon) ? '<span class="glyphicon glyphicon-ok-sign lvluser2">' : '<span class="glyphicon glyphicon-remove-sign lvluser4">';
+
 //-----------------------------------------------------
 //Activer ou désactiver le lien configuration de Navbar
 $configserverproperties = (isset($config['Sminecraft']['serverproperties'])) ? $config['Sminecraft']['serverproperties'] : '';
@@ -30,8 +42,6 @@ if ($configserverproperties == '') {
 $serverproperties = '';
 $message = '';
 $mess_translate = '';
-$timer = '';
-$Query = '';
 $user = null;
 if (!isset($config['Language']['pays'])) {
     $config['Language']['pays'] = 'fr';
@@ -45,16 +55,10 @@ if ($user) {
     if ($section == '') {
         // Afficher la page minecraft
         $section = 'infoserveur';
-        $gotimer = microtime();
-        include 'minecraft.php';
-        global $rcon;
+        //Tester rcon
         if (!$rcon) {
             // Le serveur est arrêté ou injoignable
             $section = 'serveuroffline';
-
-        } else {
-            $endtime = microtime();
-            $timer = round($endtime - $gotimer, 4); // arrondir au 10 000 de secondes
         }
     }
 } else {
@@ -73,14 +77,16 @@ $styleperso = "";
 include 'template.php';
 
 //Transmettre tout les paramètres dans un tableau
-$username = ($user != null) ? $user->username() : ''; //si loguer $username $ $user->username(), dans le cac contraire on vide $username
+
 $tblvarhtml = array(
-    'username' => $username,
+    'config' => $config,
+    'user' => $user,
     'section' => $section,
     'styleperso' => $styleperso,
     'message' => $message,
     'timer' => $timer,
     'Query' => $Query,
-    'menuconfigonoff' => $menuconfigonoff
+    'menuconfigonoff' => $menuconfigonoff,
+    'etatserv' => $etatserv
 );
 echo generepagehtml($tblvarhtml, $mess_translate);

@@ -9,10 +9,14 @@ use xPaw\MinecraftQueryException;
 if (defined('INDEXPHP')) {
     require_once('class/Rcon.class.php');
     require_once('lib/includes.php');
-    global $config;
+} else {
+    header('location: index.php');
+}
 
+function rcon($config)
+{
     try {
-        $rcon = new rcon($config['Sminecraft']['adresse'], $config['Sminecraft']['portrcon'], $config['Sminecraft']['passrcon']); // Remplacer l'ip, le port et le mot de passe par les votre
+        $rcon = new rcon($config['Sminecraft']['adresse'], $config['Sminecraft']['portrcon'], $config['Sminecraft']['passrcon']);
         if (isset($_POST['submit'])) {
             $command = $_POST['command'];
             if (strpos($command, '/') === 0) {
@@ -28,6 +32,12 @@ if (defined('INDEXPHP')) {
         $GLOBALS['message'] = $err->getMessage();
         $rcon = false;
     }
+    return $rcon;
+}
+
+function query($rcon, $config)
+{
+    $Query = false;
     if ($rcon) {
         // --------------------------------------------------------------------------
         // CONNEXION AU QUERY POUR RECEVOIR DES INFORMATIONS DE VOTRE SERVEUR
@@ -40,16 +50,15 @@ if (defined('INDEXPHP')) {
 
         require __DIR__ . '/class/MinecraftQuery.class.php';
 
-        $Timer = MicroTime(true);
+        //$Timer = MicroTime(true);
         $Query = new MinecraftQuery();
 
         try {
-            $Query->Connect($config['Sminecraft']['adresse'], $config['Sminecraft']['port'], MQ_TIMEOUT);
+            $Query->Connect($config['Sminecraft']['adresse'], $config['Sminecraft']['queryport'], MQ_TIMEOUT);
         } catch (MinecraftQueryException $e) {
             $GLOBALS['message'] = 'alert-danger, Rcon,' . $e->getMessage();
         }
     }
-} else {
-    header('location: index.php');
+    return $Query;
 }
 ?>

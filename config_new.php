@@ -33,7 +33,7 @@ $config['Chemin']['site'] = __DIR__;
 $config['Sminecraft']['adresse'] = '127.0.0.1'; //Ip du serveur minecraft
 $config['Sminecraft']['username'] = ''; // username ftp
 $config['Sminecraft']['password'] = ''; //password ftp
-$config['Sminecraft']['queyport'] = 25565; //query port (query.port dans server.properties)
+$config['Sminecraft']['queryport'] = 25565; //query port (query.port dans server.properties)
 $config['Sminecraft']['portrcon'] = 25575; //port rcon (rcon.port dans server.properties)
 $config['Sminecraft']['passrcon'] = ''; // Mot de pass pour acéder a rcon (rcon.password dans server.properties)
 

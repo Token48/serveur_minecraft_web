@@ -13,8 +13,6 @@ require_once($config['Chemin']['site'] . '/langues/errmysql_' . $config['Languag
  */
 class user
 {
-
-
     /**
      * @var int
      */
@@ -68,7 +66,6 @@ class user
      *
      * @param string $uname
      * @param string $upass [optional]
-     *            = NULL
      */
     function __construct($uname, $upass = NULL)
     {

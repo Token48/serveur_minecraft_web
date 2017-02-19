@@ -6,7 +6,7 @@
  * Time: 16:22
  */
 
-require_once('config.php');
+global $config;
 
 /**********
  * Header *
@@ -23,7 +23,7 @@ $header = "<!DOCTYPE html>
     <link rel=\"stylesheet\" href=\"css/mcs_bootstrap.css\">
     <script src=\"js/jquery.js\"></script>
     <script src=\"js/bootstrap.js\"></script>
-    [[STYLEPERSO]]
+    {{STYLEPERSO}}
 </head>
 ";
 
@@ -58,21 +58,25 @@ $navbar = "<!--  NavBar -->
                                 <span class=\"icon-bar\"></span>
                                 <span class=\"icon-bar\"></span>
                             </button>
-                            <a class=\"navbar-brand\" href=\"index.php\"><span>{{MESS_MINECRAFTSERVER}}</span></a>
+                            <a class=\"navbar-brand\" href=\"index.php\"><span>{{MESS_MINECRAFTSERVER}}&nbsp;&nbsp;</span>{{ETATSERV}}</span></a>
                         </div>
                         <div class=\"collapse navbar-collapse\" id=\"navbar-ex-collapse\">
-                            <ul class=\"nav navbar-nav navbar-right\">
-                                <li class=\"active\">
+                            <ul class=\"nav navbar-nav\">
+                                <li{{ACTIVEACUEIL}}>
                                     <a href=\"index.php\">{{MESS_ACCUEIL}}</a>
                                 </li>
-                                <li>
-                                    [[MENUCONFIGONOFF]]
+                                <li{{ACTIVECONF}}>
+                                    {{MENUCONFIGONOFF}}
                                 </li>
-                                <li>
+                                <li{{ACTIVECONTACT}}>
                                     <a href=\"#\">{{MESS_CONTACT}}</a>
                                 </li>
-                                [[USERNAME]]
                             </ul>
+                            <ul class=\"nav navbar-nav navbar-right\">
+                                <li>
+                                {{USERNAME}}
+                                </li>
+                            <ul>
                         </div>
                     </div>
                 </div>
@@ -195,56 +199,60 @@ $body = "<body>
  ****************/
 
 $infoserveur = "<!-- INFO SERVEUR -->
-<div class=\"row\">
-    <div class=\"col-sm-6\">
-        <table class=\"table table-bordered table-striped\">
-            <thead>
-                <tr>
-                    <th colspan=\"2\">{{MESS_INFOSERVER}}&nbsp;<em>({{MESS_QUERIEDIN}} [[TIMER]]s)</em>
-                </tr>
-            </thead>
-            <tbody>
-                {{infoleft}}
-            </tbody>
-        </table>
-    </div>
-        <div class=\"col-sm-6\">
-        <table class=\"table table-bordered table-striped\">
-            <thead>
-                <tr>
-                    <th>{{MESS_PLAYERS}}</th>
-                </tr>
-            </thead>
-            <tbody>
-                [[JOUEURS]]
-            </tbody>
-        </table>
-        <!-- Envoie de commande -->
-        <table class=\"table table-bordered table-striped\">
-            <thead>
-                <tr>
-                    <th>{{MESS_LAUNCHCOMMAND}}</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <form method=\"post\" role=\"form\">
-                            <div class=\"input-group\">
-                                <span class=\"input-group-addon\"><span class=\"glyphicon glyphicon-chevron-right\"></span></span>
-                                <input type=\"text\" name=\"command\" class=\"form-control\" placeholder=\"{{MESS_INPUTCOMMAND}}\" data-cip-id=\"cIPJQ342845639\">
-                                <span class=\"input-group-btn\">
-                                    <input type=\"submit\" name=\"submit\" class=\"btn btn-default\" value=\"{{MESS_INPUTSENDCOMMAND}}\">
-                                </span>
-                            </div>
-                        </form>
-
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <!-- Envoie de commande -->
-    </div>
+<div class='section'>
+    <div class=\"container\">
+        <div class=\"row\">
+            <div class=\"col-sm-6\">
+                <table class=\"table table-bordered table-striped\">
+                    <thead>
+                        <tr>
+                            <th colspan=\"2\">{{MESS_INFOSERVER}}&nbsp;<em>({{MESS_QUERIEDIN}} {{TIMER}}s)</em>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{infoleft}}
+                    </tbody>
+                </table>
+            </div>
+                <div class=\"col-sm-6\">
+                <table class=\"table table-bordered table-striped\">
+                    <thead>
+                        <tr>
+                            <th>{{MESS_PLAYERS}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{JOUEURS}}
+                    </tbody>
+                </table>
+                <!-- Envoie de commande -->
+                <table class=\"table table-bordered table-striped\">
+                    <thead>
+                        <tr>
+                            <th>{{MESS_LAUNCHCOMMAND}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <form method=\"post\" role=\"form\">
+                                    <div class=\"input-group\">
+                                        <span class=\"input-group-addon\"><span class=\"glyphicon glyphicon-chevron-right\"></span></span>
+                                        <input type=\"text\" name=\"command\" class=\"form-control\" placeholder=\"{{MESS_INPUTCOMMAND}}\" data-cip-id=\"cIPJQ342845639\">
+                                        <span class=\"input-group-btn\">
+                                            <input type=\"submit\" name=\"submit\" class=\"btn btn-default\" value=\"{{MESS_INPUTSENDCOMMAND}}\">
+                                        </span>
+                                    </div>
+                                </form>
+        
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Envoie de commande -->
+            </div>
+        </div>
+    </div>    
 </div>
 <!-- /INFO SERVEUR -->
 ";
@@ -279,7 +287,7 @@ $serverproterties = "<!-- Server properties read-->
                         </tr>
                     </thead>
                     <tbody>
-                        [[PROPERTIE-VALUE]]
+                        {{PROPERTIE-VALUE}}
                     </tbody>
                 </table>
             </div>
@@ -298,7 +306,7 @@ $serverprotertiesform = "<!-- Server properties form -->
         <form class=\"form-horizontal\" method='post' action=\"index.php\">
           <input type='hidden' name='section' value='serveurproperties'> 
           <input type='hidden' name=\"message\" value=\"{{MESS_RELOADMC}}\">
-[[INPUTFORM]]          <div class=\"form-group\">
+{{INPUTFORM}}          <div class=\"form-group\">
             <div class=\"col-sm-offset-4 col-sm-8\">
               <input type=\"submit\" name=\"submit\" class=\"btn btn-default\" value=\"{{MESS_INPUTSENDCOMMAND}}\">
             </div>
