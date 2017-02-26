@@ -3,8 +3,7 @@ if (!defined('INDEXPHP') && !defined('LOGINPHP')) {
     header('location: index.php');
     exit();
 }
-require_once($config['Chemin']['site'] . '/langues/class_user_' . $config['Language']['pays'] . '.php');
-require_once($config['Chemin']['site'] . '/langues/errmysql_' . $config['Language']['pays'] . '.php');
+require_once($config['Chemin']['site'] . '/langues/langue_' . $config['Language']['pays'] . '.php');
 
 /**
  * la classe user sert à gérer l'utilisateur actuellement connecté sur le site.
@@ -69,7 +68,7 @@ class user
      */
     function __construct($uname, $upass = NULL)
     {
-        global $config;
+        global $config; global $mess_translate;
         $validuser = false; //par defaut l'utilisateur n'est pas reconnue
 
         // Connecter l'utilisateur (appeller depuis login.php)
@@ -149,19 +148,19 @@ class user
             }
             $closemysqli = $mysqli->close();
             if (!$closemysqli) {
-                throw new Exception(MESS_ERREURCLOSEMYSQL);
+                throw new Exception($mess_translate['{{MESS_ERREURCLOSEMYSQL}}']);
             } else {
                 if ($validuser) {
                     //utilisateur valide on lui crée une session
                     if (!$this->user_create_session(isset ($session['sessionhash']) ? $session['sessionhash'] : null)) {
-                        throw new Exception(MESS_ERREURSESSIONOPEN); // impossible de créer une session
+                        throw new Exception($mess_translate['{{MESS_ERREURSESSIONOPEN}}']); // impossible de créer une session
                     }
                 }
 
             }
         }
         if (!$validuser) {
-            throw new Exception(MESS_ERREURLOGIN); // mot de passe incorrect on génère une Exception
+            throw new Exception($mess_translate['{{MESS_ERREURLOGIN}}']); // mot de passe incorrect on génère une Exception
         }
     }
 
@@ -304,7 +303,7 @@ class user
      */
     function id()
     {
-        return $this->_user_id; // renvoit l' Id
+        return $this->_user_id; // renvoi l' Id
     }
 
     /**

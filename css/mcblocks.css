@@ -1,0 +1,5326 @@
+html {
+    overflow-y: scroll;
+    height: 100%
+}
+
+body {
+    padding: 0 0 .2em 0;
+    margin: 0;
+    font-family: Verdana, Arial, sans-serif
+}
+
+body {
+    background-color: #1d1d1d;
+    background-image: url(../images/bg.png)
+}
+
+#container a {
+    color: #ccc
+}
+
+#container {
+    color: #bbb
+}
+
+#container h1, #container h2, #container h3, #container h4 {
+    color: #ddd
+}
+
+.highlight {
+    background-color: #595959 !important
+}
+
+#bookmarklet a {
+    color: #333
+}
+
+code {
+    font-size: 1.2em
+}
+
+img {
+    border: none
+}
+
+a {
+    color: #333
+}
+
+#container p {
+    text-align: justify
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+h2 {
+    border: 0 solid#DDD;
+    border-bottom-width: 1px;
+    font-size: 180%
+}
+
+h3 {
+    font-size: 160%
+}
+
+#fancybox-content, #container, #footer {
+    font-size: 80%
+}
+
+.clear {
+    display: block;
+    width: 0;
+    height: 0;
+    clear: both
+}
+
+h1 {
+    display: inline;
+    font-size: 100%;
+    font-weight: 700;
+    padding: 0;
+    margin: 0
+}
+
+#header, #header li, h1, #nav-toggle {
+    border: 0 solid#DDD
+}
+
+#header-inner, #container, #footer {
+    width: 760px;
+    margin: 0 auto
+}
+
+#header {
+    font-size: 80%;
+    background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0.0, #FFF), color-stop(1.0, #EEE));
+    background-image: -moz-linear-gradient(center top, #FFF 0, #EEE 100%);
+    border-bottom-width: 1px
+}
+
+#header ul {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0
+}
+
+h1, #nav-toggle {
+    border-left-width: 1px
+}
+
+#header li, h1 {
+    display: block;
+    float: left;
+    border-right-width: 1px
+}
+
+#header li#selected, #header li:hover, h1:hover, #nav-toggle:hover {
+    background-color: #EEE
+}
+
+#header li a, h1 a {
+    display: block;
+    padding: .5em;
+    text-decoration: none;
+    color: #444
+}
+
+#footer {
+    font-size: 70%;
+    text-align: center
+}
+
+#footer, #footer a {
+    color: #555
+}
+
+#search {
+    width: 100%;
+    font-size: 150%
+}
+
+#rows {
+    border-collapse: collapse;
+    margin-top: .5em
+}
+
+.row td {
+    padding: .5em
+}
+
+.icon, .row .icon {
+    width: 32px;
+    height: 32px;
+    padding: 0
+}
+
+.row .id {
+    font-weight: 700;
+    text-align: right;
+    width: 4em
+}
+
+.row .highlight {
+    background-color: #FFA
+}
+
+.text-id {
+    color: #666
+}
+
+#bookmarklet {
+    text-align: right;
+    margin-top: -3.5em;
+    margin-bottom: 2em
+}
+
+#bookmarklet a {
+    padding: 4px 4px 4px 24px;
+    background-image: url(/favicon16.png);
+    background-repeat: no-repeat;
+    background-color: #DDD;
+    background-position: 4px 4px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    text-decoration: none
+}
+
+.details td, #potion-calculator td {
+    vertical-align: top
+}
+
+.potion-right {
+    padding-left: 50px
+}
+
+#ad {
+    margin: 20px auto 0 auto;
+    padding: 0
+}
+
+#nav-toggle {
+    display: none
+}
+
+@media only screen and (max-device-width:640px) {
+    body {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 120%
+    }
+    #header {
+        margin-left: -10px;
+        margin-right: -10px
+    }
+    #header-inner, #container, #footer {
+        width: 100%
+    }
+    #header ul {
+        display: none;
+        border: 0 solid#DDD;
+        border-top-width: 1px
+    }
+    #header li {
+        float: none;
+        display: block
+    }
+    #nav-toggle {
+        float: right;
+        display: block
+    }
+    #nav-toggle a {
+        display: block;
+        border-right-width: 1px;
+        padding: .5em;
+        color: #444;
+        text-decoration: none
+    }
+    #nav-toggle-clear {
+        display: block;
+        width: 0;
+        height: 0;
+        clear: both
+    }
+    #bookmarklet {
+        display: none
+    }
+}
+
+#ad, #ad ins {
+    width: 320px;
+    height: 100px
+}
+
+@media(min-width:500px) {
+    #ad, #ad ins {
+        width: 468px;
+        height: 60px
+    }
+}
+
+@media(min-width:800px) {
+    #ad, #ad ins {
+        width: 728px;
+        height: 90px
+    }
+}
+
+.items-25-0-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 0 no-repeat
+}
+
+.items-25-1-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -32px no-repeat
+}
+
+.items-25-1-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -64px no-repeat
+}
+
+.items-25-1-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -96px no-repeat
+}
+
+.items-25-1-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -128px no-repeat
+}
+
+.items-25-1-4 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -160px no-repeat
+}
+
+.items-25-1-5 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -192px no-repeat
+}
+
+.items-25-1-6 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -224px no-repeat
+}
+
+.items-25-10-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -256px no-repeat
+}
+
+.items-25-100-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -288px no-repeat
+}
+
+.items-25-101-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -320px no-repeat
+}
+
+.items-25-102-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -352px no-repeat
+}
+
+.items-25-103-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -384px no-repeat
+}
+
+.items-25-104-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -416px no-repeat
+}
+
+.items-25-105-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -448px no-repeat
+}
+
+.items-25-106-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -480px no-repeat
+}
+
+.items-25-107-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -512px no-repeat
+}
+
+.items-25-108-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -544px no-repeat
+}
+
+.items-25-109-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -576px no-repeat
+}
+
+.items-25-11-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -608px no-repeat
+}
+
+.items-25-110-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -640px no-repeat
+}
+
+.items-25-111-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -672px no-repeat
+}
+
+.items-25-112-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -704px no-repeat
+}
+
+.items-25-113-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -736px no-repeat
+}
+
+.items-25-114-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -768px no-repeat
+}
+
+.items-25-115-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -800px no-repeat
+}
+
+.items-25-116-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -832px no-repeat
+}
+
+.items-25-117-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -864px no-repeat
+}
+
+.items-25-118-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -896px no-repeat
+}
+
+.items-25-119-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -928px no-repeat
+}
+
+.items-25-12-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -960px no-repeat
+}
+
+.items-25-12-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -992px no-repeat
+}
+
+.items-25-120-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1024px no-repeat
+}
+
+.items-25-121-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1056px no-repeat
+}
+
+.items-25-122-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1088px no-repeat
+}
+
+.items-25-123-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1120px no-repeat
+}
+
+.items-25-124-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1152px no-repeat
+}
+
+.items-25-125-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1184px no-repeat
+}
+
+.items-25-125-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1216px no-repeat
+}
+
+.items-25-125-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1248px no-repeat
+}
+
+.items-25-125-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1280px no-repeat
+}
+
+.items-25-125-4 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1312px no-repeat
+}
+
+.items-25-125-5 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1344px no-repeat
+}
+
+.items-25-126-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1376px no-repeat
+}
+
+.items-25-126-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1408px no-repeat
+}
+
+.items-25-126-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1440px no-repeat
+}
+
+.items-25-126-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1472px no-repeat
+}
+
+.items-25-126-4 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1504px no-repeat
+}
+
+.items-25-126-5 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1536px no-repeat
+}
+
+.items-25-127-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1568px no-repeat
+}
+
+.items-25-128-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1600px no-repeat
+}
+
+.items-25-129-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1632px no-repeat
+}
+
+.items-25-13-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1664px no-repeat
+}
+
+.items-25-130-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1696px no-repeat
+}
+
+.items-25-131-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1728px no-repeat
+}
+
+.items-25-132-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1760px no-repeat
+}
+
+.items-25-133-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1792px no-repeat
+}
+
+.items-25-134-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1824px no-repeat
+}
+
+.items-25-135-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1856px no-repeat
+}
+
+.items-25-136-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1888px no-repeat
+}
+
+.items-25-137-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1920px no-repeat
+}
+
+.items-25-138-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1952px no-repeat
+}
+
+.items-25-139-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -1984px no-repeat
+}
+
+.items-25-139-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2016px no-repeat
+}
+
+.items-25-14-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2048px no-repeat
+}
+
+.items-25-140-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2080px no-repeat
+}
+
+.items-25-141-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2112px no-repeat
+}
+
+.items-25-142-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2144px no-repeat
+}
+
+.items-25-143-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2176px no-repeat
+}
+
+.items-25-144-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2208px no-repeat
+}
+
+.items-25-145-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2240px no-repeat
+}
+
+.items-25-146-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2272px no-repeat
+}
+
+.items-25-147-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2304px no-repeat
+}
+
+.items-25-148-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2336px no-repeat
+}
+
+.items-25-149-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2368px no-repeat
+}
+
+.items-25-15-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2400px no-repeat
+}
+
+.items-25-150-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2432px no-repeat
+}
+
+.items-25-151-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2464px no-repeat
+}
+
+.items-25-152-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2496px no-repeat
+}
+
+.items-25-153-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2528px no-repeat
+}
+
+.items-25-154-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2560px no-repeat
+}
+
+.items-25-155-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2592px no-repeat
+}
+
+.items-25-155-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2624px no-repeat
+}
+
+.items-25-155-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2656px no-repeat
+}
+
+.items-25-156-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2688px no-repeat
+}
+
+.items-25-157-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2720px no-repeat
+}
+
+.items-25-158-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2752px no-repeat
+}
+
+.items-25-159-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2784px no-repeat
+}
+
+.items-25-159-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2816px no-repeat
+}
+
+.items-25-159-10 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2848px no-repeat
+}
+
+.items-25-159-11 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2880px no-repeat
+}
+
+.items-25-159-12 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2912px no-repeat
+}
+
+.items-25-159-13 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2944px no-repeat
+}
+
+.items-25-159-14 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -2976px no-repeat
+}
+
+.items-25-159-15 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3008px no-repeat
+}
+
+.items-25-159-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3040px no-repeat
+}
+
+.items-25-159-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3072px no-repeat
+}
+
+.items-25-159-4 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3104px no-repeat
+}
+
+.items-25-159-5 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3136px no-repeat
+}
+
+.items-25-159-6 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3168px no-repeat
+}
+
+.items-25-159-7 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3200px no-repeat
+}
+
+.items-25-159-8 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3232px no-repeat
+}
+
+.items-25-159-9 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3264px no-repeat
+}
+
+.items-25-16-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3296px no-repeat
+}
+
+.items-25-160-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3328px no-repeat
+}
+
+.items-25-160-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3360px no-repeat
+}
+
+.items-25-160-10 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3392px no-repeat
+}
+
+.items-25-160-11 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3424px no-repeat
+}
+
+.items-25-160-12 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3456px no-repeat
+}
+
+.items-25-160-13 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3488px no-repeat
+}
+
+.items-25-160-14 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3520px no-repeat
+}
+
+.items-25-160-15 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3552px no-repeat
+}
+
+.items-25-160-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3584px no-repeat
+}
+
+.items-25-160-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3616px no-repeat
+}
+
+.items-25-160-4 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3648px no-repeat
+}
+
+.items-25-160-5 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3680px no-repeat
+}
+
+.items-25-160-6 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3712px no-repeat
+}
+
+.items-25-160-7 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3744px no-repeat
+}
+
+.items-25-160-8 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3776px no-repeat
+}
+
+.items-25-160-9 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3808px no-repeat
+}
+
+.items-25-161-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3840px no-repeat
+}
+
+.items-25-161-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3872px no-repeat
+}
+
+.items-25-162-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3904px no-repeat
+}
+
+.items-25-162-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3936px no-repeat
+}
+
+.items-25-163-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -3968px no-repeat
+}
+
+.items-25-164-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4000px no-repeat
+}
+
+.items-25-165-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4032px no-repeat
+}
+
+.items-25-166-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4064px no-repeat
+}
+
+.items-25-167-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4096px no-repeat
+}
+
+.items-25-168-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4128px no-repeat
+}
+
+.items-25-168-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4160px no-repeat
+}
+
+.items-25-168-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4192px no-repeat
+}
+
+.items-25-169-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4224px no-repeat
+}
+
+.items-25-17-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4256px no-repeat
+}
+
+.items-25-17-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4288px no-repeat
+}
+
+.items-25-17-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4320px no-repeat
+}
+
+.items-25-17-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4352px no-repeat
+}
+
+.items-25-170-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4384px no-repeat
+}
+
+.items-25-171-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4416px no-repeat
+}
+
+.items-25-171-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4448px no-repeat
+}
+
+.items-25-171-10 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4480px no-repeat
+}
+
+.items-25-171-11 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4512px no-repeat
+}
+
+.items-25-171-12 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4544px no-repeat
+}
+
+.items-25-171-13 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4576px no-repeat
+}
+
+.items-25-171-14 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4608px no-repeat
+}
+
+.items-25-171-15 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4640px no-repeat
+}
+
+.items-25-171-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4672px no-repeat
+}
+
+.items-25-171-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4704px no-repeat
+}
+
+.items-25-171-4 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4736px no-repeat
+}
+
+.items-25-171-5 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4768px no-repeat
+}
+
+.items-25-171-6 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4800px no-repeat
+}
+
+.items-25-171-7 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4832px no-repeat
+}
+
+.items-25-171-8 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4864px no-repeat
+}
+
+.items-25-171-9 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4896px no-repeat
+}
+
+.items-25-172-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4928px no-repeat
+}
+
+.items-25-173-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4960px no-repeat
+}
+
+.items-25-174-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -4992px no-repeat
+}
+
+.items-25-175-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5024px no-repeat
+}
+
+.items-25-175-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5056px no-repeat
+}
+
+.items-25-175-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5088px no-repeat
+}
+
+.items-25-175-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5120px no-repeat
+}
+
+.items-25-175-4 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5152px no-repeat
+}
+
+.items-25-175-5 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5184px no-repeat
+}
+
+.items-25-176-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5216px no-repeat
+}
+
+.items-25-177-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5248px no-repeat
+}
+
+.items-25-178-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5280px no-repeat
+}
+
+.items-25-179-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5312px no-repeat
+}
+
+.items-25-179-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5344px no-repeat
+}
+
+.items-25-179-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5376px no-repeat
+}
+
+.items-25-18-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5408px no-repeat
+}
+
+.items-25-18-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5440px no-repeat
+}
+
+.items-25-18-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5472px no-repeat
+}
+
+.items-25-18-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5504px no-repeat
+}
+
+.items-25-180-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5536px no-repeat
+}
+
+.items-25-181-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5568px no-repeat
+}
+
+.items-25-182-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5600px no-repeat
+}
+
+.items-25-183-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5632px no-repeat
+}
+
+.items-25-184-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5664px no-repeat
+}
+
+.items-25-185-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5696px no-repeat
+}
+
+.items-25-186-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5728px no-repeat
+}
+
+.items-25-187-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5760px no-repeat
+}
+
+.items-25-188-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5792px no-repeat
+}
+
+.items-25-189-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5824px no-repeat
+}
+
+.items-25-19-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5856px no-repeat
+}
+
+.items-25-19-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5888px no-repeat
+}
+
+.items-25-190-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5920px no-repeat
+}
+
+.items-25-191-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5952px no-repeat
+}
+
+.items-25-192-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -5984px no-repeat
+}
+
+.items-25-193-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6016px no-repeat
+}
+
+.items-25-194-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6048px no-repeat
+}
+
+.items-25-195-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6080px no-repeat
+}
+
+.items-25-196-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6112px no-repeat
+}
+
+.items-25-197-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6144px no-repeat
+}
+
+.items-25-198-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6176px no-repeat
+}
+
+.items-25-199-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6208px no-repeat
+}
+
+.items-25-2-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6240px no-repeat
+}
+
+.items-25-20-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6272px no-repeat
+}
+
+.items-25-200-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6304px no-repeat
+}
+
+.items-25-201-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6336px no-repeat
+}
+
+.items-25-202-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6368px no-repeat
+}
+
+.items-25-203-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6400px no-repeat
+}
+
+.items-25-204-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6432px no-repeat
+}
+
+.items-25-205-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6464px no-repeat
+}
+
+.items-25-206-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6496px no-repeat
+}
+
+.items-25-207-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6528px no-repeat
+}
+
+.items-25-208-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6560px no-repeat
+}
+
+.items-25-209-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6592px no-repeat
+}
+
+.items-25-21-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6624px no-repeat
+}
+
+.items-25-210-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6656px no-repeat
+}
+
+.items-25-211-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6688px no-repeat
+}
+
+.items-25-212-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6720px no-repeat
+}
+
+.items-25-213-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6752px no-repeat
+}
+
+.items-25-214-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6784px no-repeat
+}
+
+.items-25-215-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6816px no-repeat
+}
+
+.items-25-216-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6848px no-repeat
+}
+
+.items-25-217-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6880px no-repeat
+}
+
+.items-25-218-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6912px no-repeat
+}
+
+.items-25-219-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6944px no-repeat
+}
+
+.items-25-22-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -6976px no-repeat
+}
+
+.items-25-220-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7008px no-repeat
+}
+
+.items-25-221-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7040px no-repeat
+}
+
+.items-25-222-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7072px no-repeat
+}
+
+.items-25-223-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7104px no-repeat
+}
+
+.items-25-224-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7136px no-repeat
+}
+
+.items-25-225-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7168px no-repeat
+}
+
+.items-25-2256-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7200px no-repeat
+}
+
+.items-25-2257-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7232px no-repeat
+}
+
+.items-25-2258-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7264px no-repeat
+}
+
+.items-25-2259-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7296px no-repeat
+}
+
+.items-25-226-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7328px no-repeat
+}
+
+.items-25-2260-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7360px no-repeat
+}
+
+.items-25-2261-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7392px no-repeat
+}
+
+.items-25-2262-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7424px no-repeat
+}
+
+.items-25-2263-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7456px no-repeat
+}
+
+.items-25-2264-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7488px no-repeat
+}
+
+.items-25-2265-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7520px no-repeat
+}
+
+.items-25-2266-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7552px no-repeat
+}
+
+.items-25-2267-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7584px no-repeat
+}
+
+.items-25-227-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7616px no-repeat
+}
+
+.items-25-228-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7648px no-repeat
+}
+
+.items-25-229-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7680px no-repeat
+}
+
+.items-25-23-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7712px no-repeat
+}
+
+.items-25-230-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7744px no-repeat
+}
+
+.items-25-231-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7776px no-repeat
+}
+
+.items-25-232-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7808px no-repeat
+}
+
+.items-25-233-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7840px no-repeat
+}
+
+.items-25-234-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7872px no-repeat
+}
+
+.items-25-24-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7904px no-repeat
+}
+
+.items-25-24-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7936px no-repeat
+}
+
+.items-25-24-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -7968px no-repeat
+}
+
+.items-25-25-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8000px no-repeat
+}
+
+.items-25-255-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8032px no-repeat
+}
+
+.items-25-256-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8064px no-repeat
+}
+
+.items-25-257-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8096px no-repeat
+}
+
+.items-25-258-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8128px no-repeat
+}
+
+.items-25-259-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8160px no-repeat
+}
+
+.items-25-26-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8192px no-repeat
+}
+
+.items-25-260-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8224px no-repeat
+}
+
+.items-25-261-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8256px no-repeat
+}
+
+.items-25-262-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8288px no-repeat
+}
+
+.items-25-263-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8320px no-repeat
+}
+
+.items-25-263-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8352px no-repeat
+}
+
+.items-25-264-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8384px no-repeat
+}
+
+.items-25-265-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8416px no-repeat
+}
+
+.items-25-266-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8448px no-repeat
+}
+
+.items-25-267-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8480px no-repeat
+}
+
+.items-25-268-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8512px no-repeat
+}
+
+.items-25-269-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8544px no-repeat
+}
+
+.items-25-27-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8576px no-repeat
+}
+
+.items-25-270-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8608px no-repeat
+}
+
+.items-25-271-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8640px no-repeat
+}
+
+.items-25-272-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8672px no-repeat
+}
+
+.items-25-273-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8704px no-repeat
+}
+
+.items-25-274-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8736px no-repeat
+}
+
+.items-25-275-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8768px no-repeat
+}
+
+.items-25-276-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8800px no-repeat
+}
+
+.items-25-277-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8832px no-repeat
+}
+
+.items-25-278-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8864px no-repeat
+}
+
+.items-25-279-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8896px no-repeat
+}
+
+.items-25-28-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8928px no-repeat
+}
+
+.items-25-280-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8960px no-repeat
+}
+
+.items-25-281-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -8992px no-repeat
+}
+
+.items-25-282-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9024px no-repeat
+}
+
+.items-25-283-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9056px no-repeat
+}
+
+.items-25-284-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9088px no-repeat
+}
+
+.items-25-285-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9120px no-repeat
+}
+
+.items-25-286-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9152px no-repeat
+}
+
+.items-25-287-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9184px no-repeat
+}
+
+.items-25-288-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9216px no-repeat
+}
+
+.items-25-289-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9248px no-repeat
+}
+
+.items-25-29-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9280px no-repeat
+}
+
+.items-25-290-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9312px no-repeat
+}
+
+.items-25-291-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9344px no-repeat
+}
+
+.items-25-292-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9376px no-repeat
+}
+
+.items-25-293-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9408px no-repeat
+}
+
+.items-25-294-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9440px no-repeat
+}
+
+.items-25-295-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9472px no-repeat
+}
+
+.items-25-296-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9504px no-repeat
+}
+
+.items-25-297-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9536px no-repeat
+}
+
+.items-25-298-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9568px no-repeat
+}
+
+.items-25-299-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9600px no-repeat
+}
+
+.items-25-3-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9632px no-repeat
+}
+
+.items-25-3-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9664px no-repeat
+}
+
+.items-25-3-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9696px no-repeat
+}
+
+.items-25-30-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9728px no-repeat
+}
+
+.items-25-300-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9760px no-repeat
+}
+
+.items-25-301-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9792px no-repeat
+}
+
+.items-25-302-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9824px no-repeat
+}
+
+.items-25-303-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9856px no-repeat
+}
+
+.items-25-304-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9888px no-repeat
+}
+
+.items-25-305-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9920px no-repeat
+}
+
+.items-25-306-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9952px no-repeat
+}
+
+.items-25-307-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -9984px no-repeat
+}
+
+.items-25-308-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10016px no-repeat
+}
+
+.items-25-309-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10048px no-repeat
+}
+
+.items-25-31-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10080px no-repeat
+}
+
+.items-25-31-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10112px no-repeat
+}
+
+.items-25-31-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10144px no-repeat
+}
+
+.items-25-310-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10176px no-repeat
+}
+
+.items-25-311-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10208px no-repeat
+}
+
+.items-25-312-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10240px no-repeat
+}
+
+.items-25-313-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10272px no-repeat
+}
+
+.items-25-314-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10304px no-repeat
+}
+
+.items-25-315-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10336px no-repeat
+}
+
+.items-25-316-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10368px no-repeat
+}
+
+.items-25-317-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10400px no-repeat
+}
+
+.items-25-318-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10432px no-repeat
+}
+
+.items-25-319-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10464px no-repeat
+}
+
+.items-25-32-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10496px no-repeat
+}
+
+.items-25-320-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10528px no-repeat
+}
+
+.items-25-321-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10560px no-repeat
+}
+
+.items-25-322-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10592px no-repeat
+}
+
+.items-25-322-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10624px no-repeat
+}
+
+.items-25-323-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10656px no-repeat
+}
+
+.items-25-324-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10688px no-repeat
+}
+
+.items-25-325-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10720px no-repeat
+}
+
+.items-25-326-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10752px no-repeat
+}
+
+.items-25-327-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10784px no-repeat
+}
+
+.items-25-328-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10816px no-repeat
+}
+
+.items-25-329-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10848px no-repeat
+}
+
+.items-25-33-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10880px no-repeat
+}
+
+.items-25-330-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10912px no-repeat
+}
+
+.items-25-331-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10944px no-repeat
+}
+
+.items-25-332-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -10976px no-repeat
+}
+
+.items-25-333-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11008px no-repeat
+}
+
+.items-25-334-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11040px no-repeat
+}
+
+.items-25-335-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11072px no-repeat
+}
+
+.items-25-336-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11104px no-repeat
+}
+
+.items-25-337-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11136px no-repeat
+}
+
+.items-25-338-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11168px no-repeat
+}
+
+.items-25-339-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11200px no-repeat
+}
+
+.items-25-34-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11232px no-repeat
+}
+
+.items-25-340-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11264px no-repeat
+}
+
+.items-25-341-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11296px no-repeat
+}
+
+.items-25-342-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11328px no-repeat
+}
+
+.items-25-343-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11360px no-repeat
+}
+
+.items-25-344-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11392px no-repeat
+}
+
+.items-25-345-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11424px no-repeat
+}
+
+.items-25-346-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11456px no-repeat
+}
+
+.items-25-347-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11488px no-repeat
+}
+
+.items-25-348-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11520px no-repeat
+}
+
+.items-25-349-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11552px no-repeat
+}
+
+.items-25-349-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11584px no-repeat
+}
+
+.items-25-349-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11616px no-repeat
+}
+
+.items-25-349-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11648px no-repeat
+}
+
+.items-25-35-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11680px no-repeat
+}
+
+.items-25-35-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11712px no-repeat
+}
+
+.items-25-35-10 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11744px no-repeat
+}
+
+.items-25-35-11 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11776px no-repeat
+}
+
+.items-25-35-12 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11808px no-repeat
+}
+
+.items-25-35-13 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11840px no-repeat
+}
+
+.items-25-35-14 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11872px no-repeat
+}
+
+.items-25-35-15 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11904px no-repeat
+}
+
+.items-25-35-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11936px no-repeat
+}
+
+.items-25-35-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -11968px no-repeat
+}
+
+.items-25-35-4 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12000px no-repeat
+}
+
+.items-25-35-5 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12032px no-repeat
+}
+
+.items-25-35-6 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12064px no-repeat
+}
+
+.items-25-35-7 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12096px no-repeat
+}
+
+.items-25-35-8 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12128px no-repeat
+}
+
+.items-25-35-9 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12160px no-repeat
+}
+
+.items-25-350-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12192px no-repeat
+}
+
+.items-25-350-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12224px no-repeat
+}
+
+.items-25-351-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12256px no-repeat
+}
+
+.items-25-351-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12288px no-repeat
+}
+
+.items-25-351-10 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12320px no-repeat
+}
+
+.items-25-351-11 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12352px no-repeat
+}
+
+.items-25-351-12 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12384px no-repeat
+}
+
+.items-25-351-13 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12416px no-repeat
+}
+
+.items-25-351-14 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12448px no-repeat
+}
+
+.items-25-351-15 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12480px no-repeat
+}
+
+.items-25-351-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12512px no-repeat
+}
+
+.items-25-351-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12544px no-repeat
+}
+
+.items-25-351-4 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12576px no-repeat
+}
+
+.items-25-351-5 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12608px no-repeat
+}
+
+.items-25-351-6 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12640px no-repeat
+}
+
+.items-25-351-7 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12672px no-repeat
+}
+
+.items-25-351-8 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12704px no-repeat
+}
+
+.items-25-351-9 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12736px no-repeat
+}
+
+.items-25-352-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12768px no-repeat
+}
+
+.items-25-353-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12800px no-repeat
+}
+
+.items-25-354-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12832px no-repeat
+}
+
+.items-25-355-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12864px no-repeat
+}
+
+.items-25-356-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12896px no-repeat
+}
+
+.items-25-357-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12928px no-repeat
+}
+
+.items-25-358-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12960px no-repeat
+}
+
+.items-25-359-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -12992px no-repeat
+}
+
+.items-25-360-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13024px no-repeat
+}
+
+.items-25-361-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13056px no-repeat
+}
+
+.items-25-362-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13088px no-repeat
+}
+
+.items-25-363-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13120px no-repeat
+}
+
+.items-25-364-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13152px no-repeat
+}
+
+.items-25-365-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13184px no-repeat
+}
+
+.items-25-366-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13216px no-repeat
+}
+
+.items-25-367-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13248px no-repeat
+}
+
+.items-25-368-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13280px no-repeat
+}
+
+.items-25-369-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13312px no-repeat
+}
+
+.items-25-37-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13344px no-repeat
+}
+
+.items-25-370-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13376px no-repeat
+}
+
+.items-25-371-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13408px no-repeat
+}
+
+.items-25-372-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13440px no-repeat
+}
+
+.items-25-373-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13472px no-repeat
+}
+
+.items-25-374-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13504px no-repeat
+}
+
+.items-25-375-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13536px no-repeat
+}
+
+.items-25-376-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13568px no-repeat
+}
+
+.items-25-377-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13600px no-repeat
+}
+
+.items-25-378-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13632px no-repeat
+}
+
+.items-25-379-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13664px no-repeat
+}
+
+.items-25-38-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13696px no-repeat
+}
+
+.items-25-38-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13728px no-repeat
+}
+
+.items-25-38-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13760px no-repeat
+}
+
+.items-25-38-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13792px no-repeat
+}
+
+.items-25-38-4 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13824px no-repeat
+}
+
+.items-25-38-5 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13856px no-repeat
+}
+
+.items-25-38-6 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13888px no-repeat
+}
+
+.items-25-38-7 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13920px no-repeat
+}
+
+.items-25-38-8 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13952px no-repeat
+}
+
+.items-25-380-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -13984px no-repeat
+}
+
+.items-25-381-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14016px no-repeat
+}
+
+.items-25-382-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14048px no-repeat
+}
+
+.items-25-383-100 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14080px no-repeat
+}
+
+.items-25-383-101 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14112px no-repeat
+}
+
+.items-25-383-102 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14144px no-repeat
+}
+
+.items-25-383-103 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14176px no-repeat
+}
+
+.items-25-383-120 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14208px no-repeat
+}
+
+.items-25-383-23 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14240px no-repeat
+}
+
+.items-25-383-27 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14272px no-repeat
+}
+
+.items-25-383-28 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14304px no-repeat
+}
+
+.items-25-383-29 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14336px no-repeat
+}
+
+.items-25-383-31 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14368px no-repeat
+}
+
+.items-25-383-32 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14400px no-repeat
+}
+
+.items-25-383-34 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14432px no-repeat
+}
+
+.items-25-383-35 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14464px no-repeat
+}
+
+.items-25-383-36 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14496px no-repeat
+}
+
+.items-25-383-4 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14528px no-repeat
+}
+
+.items-25-383-5 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14560px no-repeat
+}
+
+.items-25-383-50 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14592px no-repeat
+}
+
+.items-25-383-51 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14624px no-repeat
+}
+
+.items-25-383-52 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14656px no-repeat
+}
+
+.items-25-383-54 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14688px no-repeat
+}
+
+.items-25-383-55 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14720px no-repeat
+}
+
+.items-25-383-56 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14752px no-repeat
+}
+
+.items-25-383-57 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14784px no-repeat
+}
+
+.items-25-383-58 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14816px no-repeat
+}
+
+.items-25-383-59 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14848px no-repeat
+}
+
+.items-25-383-6 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14880px no-repeat
+}
+
+.items-25-383-60 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14912px no-repeat
+}
+
+.items-25-383-61 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14944px no-repeat
+}
+
+.items-25-383-62 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -14976px no-repeat
+}
+
+.items-25-383-65 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15008px no-repeat
+}
+
+.items-25-383-66 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15040px no-repeat
+}
+
+.items-25-383-67 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15072px no-repeat
+}
+
+.items-25-383-68 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15104px no-repeat
+}
+
+.items-25-383-69 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15136px no-repeat
+}
+
+.items-25-383-90 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15168px no-repeat
+}
+
+.items-25-383-91 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15200px no-repeat
+}
+
+.items-25-383-92 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15232px no-repeat
+}
+
+.items-25-383-93 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15264px no-repeat
+}
+
+.items-25-383-94 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15296px no-repeat
+}
+
+.items-25-383-95 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15328px no-repeat
+}
+
+.items-25-383-96 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15360px no-repeat
+}
+
+.items-25-383-98 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15392px no-repeat
+}
+
+.items-25-384-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15424px no-repeat
+}
+
+.items-25-385-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15456px no-repeat
+}
+
+.items-25-386-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15488px no-repeat
+}
+
+.items-25-387-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15520px no-repeat
+}
+
+.items-25-388-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15552px no-repeat
+}
+
+.items-25-389-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15584px no-repeat
+}
+
+.items-25-39-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15616px no-repeat
+}
+
+.items-25-390-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15648px no-repeat
+}
+
+.items-25-391-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15680px no-repeat
+}
+
+.items-25-392-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15712px no-repeat
+}
+
+.items-25-393-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15744px no-repeat
+}
+
+.items-25-394-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15776px no-repeat
+}
+
+.items-25-395-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15808px no-repeat
+}
+
+.items-25-396-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15840px no-repeat
+}
+
+.items-25-397-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15872px no-repeat
+}
+
+.items-25-397-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15904px no-repeat
+}
+
+.items-25-397-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15936px no-repeat
+}
+
+.items-25-397-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -15968px no-repeat
+}
+
+.items-25-397-4 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16000px no-repeat
+}
+
+.items-25-397-5 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16032px no-repeat
+}
+
+.items-25-398-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16064px no-repeat
+}
+
+.items-25-399-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16096px no-repeat
+}
+
+.items-25-4-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16128px no-repeat
+}
+
+.items-25-40-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16160px no-repeat
+}
+
+.items-25-400-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16192px no-repeat
+}
+
+.items-25-401-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16224px no-repeat
+}
+
+.items-25-402-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16256px no-repeat
+}
+
+.items-25-403-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16288px no-repeat
+}
+
+.items-25-404-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16320px no-repeat
+}
+
+.items-25-405-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16352px no-repeat
+}
+
+.items-25-406-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16384px no-repeat
+}
+
+.items-25-407-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16416px no-repeat
+}
+
+.items-25-408-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16448px no-repeat
+}
+
+.items-25-409-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16480px no-repeat
+}
+
+.items-25-41-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16512px no-repeat
+}
+
+.items-25-410-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16544px no-repeat
+}
+
+.items-25-411-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16576px no-repeat
+}
+
+.items-25-412-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16608px no-repeat
+}
+
+.items-25-413-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16640px no-repeat
+}
+
+.items-25-414-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16672px no-repeat
+}
+
+.items-25-415-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16704px no-repeat
+}
+
+.items-25-416-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16736px no-repeat
+}
+
+.items-25-417-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16768px no-repeat
+}
+
+.items-25-418-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16800px no-repeat
+}
+
+.items-25-419-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16832px no-repeat
+}
+
+.items-25-42-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16864px no-repeat
+}
+
+.items-25-420-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16896px no-repeat
+}
+
+.items-25-421-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16928px no-repeat
+}
+
+.items-25-422-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16960px no-repeat
+}
+
+.items-25-423-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -16992px no-repeat
+}
+
+.items-25-424-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17024px no-repeat
+}
+
+.items-25-425-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17056px no-repeat
+}
+
+.items-25-427-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17088px no-repeat
+}
+
+.items-25-428-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17120px no-repeat
+}
+
+.items-25-429-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17152px no-repeat
+}
+
+.items-25-43-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17184px no-repeat
+}
+
+.items-25-43-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17216px no-repeat
+}
+
+.items-25-43-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17248px no-repeat
+}
+
+.items-25-43-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17280px no-repeat
+}
+
+.items-25-43-4 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17312px no-repeat
+}
+
+.items-25-43-5 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17344px no-repeat
+}
+
+.items-25-43-6 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17376px no-repeat
+}
+
+.items-25-43-7 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17408px no-repeat
+}
+
+.items-25-430-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17440px no-repeat
+}
+
+.items-25-431-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17472px no-repeat
+}
+
+.items-25-432-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17504px no-repeat
+}
+
+.items-25-433-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17536px no-repeat
+}
+
+.items-25-434-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17568px no-repeat
+}
+
+.items-25-435-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17600px no-repeat
+}
+
+.items-25-436-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17632px no-repeat
+}
+
+.items-25-437-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17664px no-repeat
+}
+
+.items-25-438-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17696px no-repeat
+}
+
+.items-25-439-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17728px no-repeat
+}
+
+.items-25-44-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17760px no-repeat
+}
+
+.items-25-44-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17792px no-repeat
+}
+
+.items-25-44-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17824px no-repeat
+}
+
+.items-25-44-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17856px no-repeat
+}
+
+.items-25-44-4 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17888px no-repeat
+}
+
+.items-25-44-5 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17920px no-repeat
+}
+
+.items-25-44-6 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17952px no-repeat
+}
+
+.items-25-44-7 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -17984px no-repeat
+}
+
+.items-25-440-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18016px no-repeat
+}
+
+.items-25-441-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18048px no-repeat
+}
+
+.items-25-442-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18080px no-repeat
+}
+
+.items-25-443-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18112px no-repeat
+}
+
+.items-25-444-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18144px no-repeat
+}
+
+.items-25-445-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18176px no-repeat
+}
+
+.items-25-446-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18208px no-repeat
+}
+
+.items-25-447-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18240px no-repeat
+}
+
+.items-25-448-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18272px no-repeat
+}
+
+.items-25-449-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18304px no-repeat
+}
+
+.items-25-45-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18336px no-repeat
+}
+
+.items-25-450-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18368px no-repeat
+}
+
+.items-25-452-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18400px no-repeat
+}
+
+.items-25-46-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18432px no-repeat
+}
+
+.items-25-47-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18464px no-repeat
+}
+
+.items-25-48-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18496px no-repeat
+}
+
+.items-25-49-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18528px no-repeat
+}
+
+.items-25-5-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18560px no-repeat
+}
+
+.items-25-5-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18592px no-repeat
+}
+
+.items-25-5-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18624px no-repeat
+}
+
+.items-25-5-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18656px no-repeat
+}
+
+.items-25-5-4 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18688px no-repeat
+}
+
+.items-25-5-5 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18720px no-repeat
+}
+
+.items-25-50-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18752px no-repeat
+}
+
+.items-25-51-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18784px no-repeat
+}
+
+.items-25-52-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18816px no-repeat
+}
+
+.items-25-53-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18848px no-repeat
+}
+
+.items-25-54-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18880px no-repeat
+}
+
+.items-25-55-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18912px no-repeat
+}
+
+.items-25-56-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18944px no-repeat
+}
+
+.items-25-57-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -18976px no-repeat
+}
+
+.items-25-58-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19008px no-repeat
+}
+
+.items-25-59-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19040px no-repeat
+}
+
+.items-25-6-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19072px no-repeat
+}
+
+.items-25-6-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19104px no-repeat
+}
+
+.items-25-6-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19136px no-repeat
+}
+
+.items-25-6-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19168px no-repeat
+}
+
+.items-25-6-4 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19200px no-repeat
+}
+
+.items-25-6-5 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19232px no-repeat
+}
+
+.items-25-60-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19264px no-repeat
+}
+
+.items-25-61-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19296px no-repeat
+}
+
+.items-25-62-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19328px no-repeat
+}
+
+.items-25-63-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19360px no-repeat
+}
+
+.items-25-64-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19392px no-repeat
+}
+
+.items-25-65-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19424px no-repeat
+}
+
+.items-25-66-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19456px no-repeat
+}
+
+.items-25-67-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19488px no-repeat
+}
+
+.items-25-68-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19520px no-repeat
+}
+
+.items-25-69-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19552px no-repeat
+}
+
+.items-25-7-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19584px no-repeat
+}
+
+.items-25-70-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19616px no-repeat
+}
+
+.items-25-71-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19648px no-repeat
+}
+
+.items-25-72-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19680px no-repeat
+}
+
+.items-25-73-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19712px no-repeat
+}
+
+.items-25-74-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19744px no-repeat
+}
+
+.items-25-75-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19776px no-repeat
+}
+
+.items-25-76-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19808px no-repeat
+}
+
+.items-25-77-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19840px no-repeat
+}
+
+.items-25-78-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19872px no-repeat
+}
+
+.items-25-79-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19904px no-repeat
+}
+
+.items-25-8-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19936px no-repeat
+}
+
+.items-25-80-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -19968px no-repeat
+}
+
+.items-25-81-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20000px no-repeat
+}
+
+.items-25-82-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20032px no-repeat
+}
+
+.items-25-83-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20064px no-repeat
+}
+
+.items-25-84-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20096px no-repeat
+}
+
+.items-25-85-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20128px no-repeat
+}
+
+.items-25-86-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20160px no-repeat
+}
+
+.items-25-87-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20192px no-repeat
+}
+
+.items-25-88-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20224px no-repeat
+}
+
+.items-25-89-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20256px no-repeat
+}
+
+.items-25-9-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20288px no-repeat
+}
+
+.items-25-90-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20320px no-repeat
+}
+
+.items-25-91-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20352px no-repeat
+}
+
+.items-25-92-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20384px no-repeat
+}
+
+.items-25-93-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20416px no-repeat
+}
+
+.items-25-94-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20448px no-repeat
+}
+
+.items-25-95-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20480px no-repeat
+}
+
+.items-25-95-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20512px no-repeat
+}
+
+.items-25-95-10 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20544px no-repeat
+}
+
+.items-25-95-11 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20576px no-repeat
+}
+
+.items-25-95-12 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20608px no-repeat
+}
+
+.items-25-95-13 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20640px no-repeat
+}
+
+.items-25-95-14 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20672px no-repeat
+}
+
+.items-25-95-15 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20704px no-repeat
+}
+
+.items-25-95-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20736px no-repeat
+}
+
+.items-25-95-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20768px no-repeat
+}
+
+.items-25-95-4 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20800px no-repeat
+}
+
+.items-25-95-5 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20832px no-repeat
+}
+
+.items-25-95-6 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20864px no-repeat
+}
+
+.items-25-95-7 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20896px no-repeat
+}
+
+.items-25-95-8 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20928px no-repeat
+}
+
+.items-25-95-9 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20960px no-repeat
+}
+
+.items-25-96-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -20992px no-repeat
+}
+
+.items-25-97-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -21024px no-repeat
+}
+
+.items-25-97-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -21056px no-repeat
+}
+
+.items-25-97-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -21088px no-repeat
+}
+
+.items-25-97-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -21120px no-repeat
+}
+
+.items-25-97-4 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -21152px no-repeat
+}
+
+.items-25-97-5 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -21184px no-repeat
+}
+
+.items-25-98-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -21216px no-repeat
+}
+
+.items-25-98-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -21248px no-repeat
+}
+
+.items-25-98-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -21280px no-repeat
+}
+
+.items-25-98-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -21312px no-repeat
+}
+
+.items-25-99-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/items-25.png) 0 -21344px no-repeat
+}
+
+.entities-25-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 0 no-repeat
+}
+
+.entities-25-10 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -32px no-repeat
+}
+
+.entities-25-100 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -64px no-repeat
+}
+
+.entities-25-101 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -96px no-repeat
+}
+
+.entities-25-102 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -128px no-repeat
+}
+
+.entities-25-103 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -160px no-repeat
+}
+
+.entities-25-104 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -192px no-repeat
+}
+
+.entities-25-11 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -224px no-repeat
+}
+
+.entities-25-12 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -256px no-repeat
+}
+
+.entities-25-120 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -288px no-repeat
+}
+
+.entities-25-13 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -320px no-repeat
+}
+
+.entities-25-14 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -352px no-repeat
+}
+
+.entities-25-15 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -384px no-repeat
+}
+
+.entities-25-16 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -416px no-repeat
+}
+
+.entities-25-17 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -448px no-repeat
+}
+
+.entities-25-18 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -480px no-repeat
+}
+
+.entities-25-19 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -512px no-repeat
+}
+
+.entities-25-2 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -544px no-repeat
+}
+
+.entities-25-20 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -576px no-repeat
+}
+
+.entities-25-200 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -608px no-repeat
+}
+
+.entities-25-21 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -640px no-repeat
+}
+
+.entities-25-22 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -672px no-repeat
+}
+
+.entities-25-23 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -704px no-repeat
+}
+
+.entities-25-24 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -736px no-repeat
+}
+
+.entities-25-25 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -768px no-repeat
+}
+
+.entities-25-26 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -800px no-repeat
+}
+
+.entities-25-27 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -832px no-repeat
+}
+
+.entities-25-28 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -864px no-repeat
+}
+
+.entities-25-29 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -896px no-repeat
+}
+
+.entities-25-3 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -928px no-repeat
+}
+
+.entities-25-30 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -960px no-repeat
+}
+
+.entities-25-31 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -992px no-repeat
+}
+
+.entities-25-32 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1024px no-repeat
+}
+
+.entities-25-33 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1056px no-repeat
+}
+
+.entities-25-34 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1088px no-repeat
+}
+
+.entities-25-35 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1120px no-repeat
+}
+
+.entities-25-36 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1152px no-repeat
+}
+
+.entities-25-4 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1184px no-repeat
+}
+
+.entities-25-40 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1216px no-repeat
+}
+
+.entities-25-41 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1248px no-repeat
+}
+
+.entities-25-42 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1280px no-repeat
+}
+
+.entities-25-43 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1312px no-repeat
+}
+
+.entities-25-44 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1344px no-repeat
+}
+
+.entities-25-45 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1376px no-repeat
+}
+
+.entities-25-46 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1408px no-repeat
+}
+
+.entities-25-47 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1440px no-repeat
+}
+
+.entities-25-5 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1472px no-repeat
+}
+
+.entities-25-50 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1504px no-repeat
+}
+
+.entities-25-51 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1536px no-repeat
+}
+
+.entities-25-52 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1568px no-repeat
+}
+
+.entities-25-53 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1600px no-repeat
+}
+
+.entities-25-54 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1632px no-repeat
+}
+
+.entities-25-55 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1664px no-repeat
+}
+
+.entities-25-56 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1696px no-repeat
+}
+
+.entities-25-57 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1728px no-repeat
+}
+
+.entities-25-58 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1760px no-repeat
+}
+
+.entities-25-59 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1792px no-repeat
+}
+
+.entities-25-6 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1824px no-repeat
+}
+
+.entities-25-60 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1856px no-repeat
+}
+
+.entities-25-61 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1888px no-repeat
+}
+
+.entities-25-62 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1920px no-repeat
+}
+
+.entities-25-63 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1952px no-repeat
+}
+
+.entities-25-64 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -1984px no-repeat
+}
+
+.entities-25-65 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -2016px no-repeat
+}
+
+.entities-25-66 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -2048px no-repeat
+}
+
+.entities-25-67 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -2080px no-repeat
+}
+
+.entities-25-68 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -2112px no-repeat
+}
+
+.entities-25-69 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -2144px no-repeat
+}
+
+.entities-25-7 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -2176px no-repeat
+}
+
+.entities-25-8 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -2208px no-repeat
+}
+
+.entities-25-9 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -2240px no-repeat
+}
+
+.entities-25-90 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -2272px no-repeat
+}
+
+.entities-25-91 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -2304px no-repeat
+}
+
+.entities-25-92 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -2336px no-repeat
+}
+
+.entities-25-93 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -2368px no-repeat
+}
+
+.entities-25-94 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -2400px no-repeat
+}
+
+.entities-25-95 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -2432px no-repeat
+}
+
+.entities-25-96 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -2464px no-repeat
+}
+
+.entities-25-97 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -2496px no-repeat
+}
+
+.entities-25-98 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -2528px no-repeat
+}
+
+.entities-25-99 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/entities-25.png) 0 -2560px no-repeat
+}
+
+.potions-25-0-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 0 no-repeat
+}
+
+.potions-25-0-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -32px no-repeat
+}
+
+.potions-25-1-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -64px no-repeat
+}
+
+.potions-25-1-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -96px no-repeat
+}
+
+.potions-25-10-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -128px no-repeat
+}
+
+.potions-25-10-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -160px no-repeat
+}
+
+.potions-25-11-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -192px no-repeat
+}
+
+.potions-25-11-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -224px no-repeat
+}
+
+.potions-25-12-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -256px no-repeat
+}
+
+.potions-25-12-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -288px no-repeat
+}
+
+.potions-25-13-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -320px no-repeat
+}
+
+.potions-25-13-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -352px no-repeat
+}
+
+.potions-25-14-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -384px no-repeat
+}
+
+.potions-25-14-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -416px no-repeat
+}
+
+.potions-25-2-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -448px no-repeat
+}
+
+.potions-25-2-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -480px no-repeat
+}
+
+.potions-25-3-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -512px no-repeat
+}
+
+.potions-25-3-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -544px no-repeat
+}
+
+.potions-25-4-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -576px no-repeat
+}
+
+.potions-25-4-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -608px no-repeat
+}
+
+.potions-25-5-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -640px no-repeat
+}
+
+.potions-25-5-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -672px no-repeat
+}
+
+.potions-25-6-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -704px no-repeat
+}
+
+.potions-25-6-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -736px no-repeat
+}
+
+.potions-25-8-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -768px no-repeat
+}
+
+.potions-25-8-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -800px no-repeat
+}
+
+.potions-25-9-0 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -832px no-repeat
+}
+
+.potions-25-9-1 {
+    width: 32px;
+    height: 32px;
+    background: url(../images/sprites/potions-25.png) 0 -864px no-repeat
+}
+
+#fancybox-loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    margin-left: -20px;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1104;
+    display: none
+}
+
+#fancybox-loading div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 480px;
+    background-image: url('../images/fancybox.png')
+}
+
+#fancybox-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1100;
+    display: none
+}
+
+#fancybox-tmp {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    overflow: auto;
+    display: none
+}
+
+#fancybox-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    z-index: 1101;
+    outline: none;
+    display: none
+}
+
+#fancybox-outer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #fff
+}
+
+#fancybox-content {
+    width: 0;
+    height: 0;
+    padding: 0;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1102;
+    border: 0 solid #fff
+}
+
+#fancybox-hide-sel-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 1101
+}
+
+#fancybox-close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 30px;
+    height: 30px;
+    background: transparent url('../images/fancybox.png') -40px 0;
+    cursor: pointer;
+    z-index: 1103;
+    display: none
+}
+
+#fancybox-error {
+    color: #444;
+    font: 400 12px/20px Arial;
+    padding: 14px;
+    margin: 0
+}
+
+#fancybox-img {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    line-height: 0;
+    vertical-align: top
+}
+
+#fancybox-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block
+}
+
+#fancybox-left, #fancybox-right {
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 35%;
+    cursor: pointer;
+    outline: none;
+    background: transparent url('../images/blank.gif');
+    z-index: 1102;
+    display: none
+}
+
+#fancybox-left {
+    left: 0
+}
+
+#fancybox-right {
+    right: 0
+}
+
+#fancybox-left-ico, #fancybox-right-ico {
+    position: absolute;
+    top: 50%;
+    left: -9999px;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    cursor: pointer;
+    z-index: 1102;
+    display: block
+}
+
+#fancybox-left-ico {
+    background-image: url('../images/fancybox.png');
+    background-position: -40px -30px
+}
+
+#fancybox-right-ico {
+    background-image: url('../images/fancybox.png');
+    background-position: -40px -60px
+}
+
+#fancybox-left:hover, #fancybox-right:hover {
+    visibility: visible
+}
+
+#fancybox-left:hover span {
+    left: 20px
+}
+
+#fancybox-right:hover span {
+    left: auto;
+    right: 20px
+}
+
+.fancybox-bg {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    width: 20px;
+    height: 20px;
+    z-index: 1001
+}
+
+#fancybox-bg-n {
+    top: -20px;
+    left: 0;
+    width: 100%;
+    background-image: url('../images/fancybox-x.png')
+}
+
+#fancybox-bg-ne {
+    top: -20px;
+    right: -20px;
+    background-image: url('../images/fancybox.png');
+    background-position: -40px -162px
+}
+
+#fancybox-bg-e {
+    top: 0;
+    right: -20px;
+    height: 100%;
+    background-image: url('../images/fancybox-y.png');
+    background-position: -20px 0
+}
+
+#fancybox-bg-se {
+    bottom: -20px;
+    right: -20px;
+    background-image: url('../images/fancybox.png');
+    background-position: -40px -182px
+}
+
+#fancybox-bg-s {
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    background-image: url('../images/fancybox-x.png');
+    background-position: 0 -20px
+}
+
+#fancybox-bg-sw {
+    bottom: -20px;
+    left: -20px;
+    background-image: url('../images/fancybox.png');
+    background-position: -40px -142px
+}
+
+#fancybox-bg-w {
+    top: 0;
+    left: -20px;
+    height: 100%;
+    background-image: url('../images/fancybox-y.png')
+}
+
+#fancybox-bg-nw {
+    top: -20px;
+    left: -20px;
+    background-image: url('../images/fancybox.png');
+    background-position: -40px -122px
+}
+
+#fancybox-title {
+    font-family: Helvetica;
+    font-size: 12px;
+    z-index: 1102
+}
+
+.fancybox-title-inside {
+    padding-bottom: 10px;
+    text-align: center;
+    color: #333;
+    background: #fff;
+    position: relative
+}
+
+.fancybox-title-outside {
+    padding-top: 10px;
+    color: #fff
+}
+
+.fancybox-title-over {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #FFF;
+    text-align: left
+}
+
+#fancybox-title-over {
+    padding: 10px;
+    background-image: url('../images/fancy_title_over.png');
+    display: block
+}
+
+.fancybox-title-float {
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    height: 32px
+}
+
+#fancybox-title-float-wrap {
+    border: none;
+    border-collapse: collapse;
+    width: auto
+}
+
+#fancybox-title-float-wrap td {
+    border: none;
+    white-space: nowrap
+}
+
+#fancybox-title-float-left {
+    padding: 0 0 0 15px;
+    background: url('../images/fancybox.png') -40px -90px no-repeat
+}
+
+#fancybox-title-float-main {
+    color: #FFF;
+    line-height: 29px;
+    font-weight: 700;
+    padding: 0 0 3px 0;
+    background: url('../images/fancybox-x.png') 0 -40px
+}
+
+#fancybox-title-float-right {
+    padding: 0 0 0 15px;
+    background: url('../images/fancybox.png') -55px -90px no-repeat
+}
+
+.fancybox-ie6 #fancybox-close {
+    background: transparent;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancy_close.png', sizingMethod='scale')
+}
+
+.fancybox-ie6 #fancybox-left-ico {
+    background: transparent;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancy_nav_left.png', sizingMethod='scale')
+}
+
+.fancybox-ie6 #fancybox-right-ico {
+    background: transparent;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancy_nav_right.png', sizingMethod='scale')
+}
+
+.fancybox-ie6 #fancybox-title-over {
+    background: transparent;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancy_title_over.png', sizingMethod='scale');
+    zoom: 1
+}
+
+.fancybox-ie6 #fancybox-title-float-left {
+    background: transparent;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancy_title_left.png', sizingMethod='scale')
+}
+
+.fancybox-ie6 #fancybox-title-float-main {
+    background: transparent;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancy_title_main.png', sizingMethod='scale')
+}
+
+.fancybox-ie6 #fancybox-title-float-right {
+    background: transparent;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancy_title_right.png', sizingMethod='scale')
+}
+
+.fancybox-ie6 #fancybox-bg-w, .fancybox-ie6 #fancybox-bg-e, .fancybox-ie6 #fancybox-left, .fancybox-ie6 #fancybox-right, #fancybox-hide-sel-frame {
+    height: expression(this.parentNode.clientHeight + "px")
+}
+
+#fancybox-loading.fancybox-ie6 {
+    position: absolute;
+    margin-top: 0;
+    top: expression( (-20 + (document.documentElement.clientHeight ? document.documentElement.clientHeight/2:document.body.clientHeight/2) + ( ignoreMe=document.documentElement.scrollTop ? document.documentElement.scrollTop:document.body.scrollTop)) + 'px')
+}
+
+#fancybox-loading.fancybox-ie6 div {
+    background: transparent;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancy_loading.png', sizingMethod='scale')
+}
+
+.fancybox-ie .fancybox-bg {
+    background: transparent !important
+}
+
+.fancybox-ie #fancybox-bg-n {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancy_shadow_n.png', sizingMethod='scale')
+}
+
+.fancybox-ie #fancybox-bg-ne {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancy_shadow_ne.png', sizingMethod='scale')
+}
+
+.fancybox-ie #fancybox-bg-e {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancy_shadow_e.png', sizingMethod='scale')
+}
+
+.fancybox-ie #fancybox-bg-se {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancy_shadow_se.png', sizingMethod='scale')
+}
+
+.fancybox-ie #fancybox-bg-s {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancy_shadow_s.png', sizingMethod='scale')
+}
+
+.fancybox-ie #fancybox-bg-sw {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancy_shadow_sw.png', sizingMethod='scale')
+}
+
+.fancybox-ie #fancybox-bg-w {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancy_shadow_w.png', sizingMethod='scale')
+}
+
+.fancybox-ie #fancybox-bg-nw {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancy_shadow_nw.png', sizingMethod='scale')
+}
