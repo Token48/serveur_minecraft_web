@@ -1,5 +1,6 @@
 <?php
 
+require_once ('commandes.php');
 function generepagehtml($tblhtml, $mess_translate)
 {
     $body = '';
@@ -15,7 +16,8 @@ function generepagehtml($tblhtml, $mess_translate)
     $config = $tblhtml['config'];
     $user = $tblhtml['user'];
     $username = ($user != null) ? $user->username() : ''; //si loguer $username $ $user->username(), dans le cac contraire on vide $username
-    require_once('langues/index_' . $config['Language']['pays'] . '.php');
+
+    require_once('langues/langue_' . $config['Language']['pays'] . '.php');
 
     if (defined('DEBUG')) {
         var_dump($config['Language']['pays']);
@@ -76,6 +78,12 @@ function generepagehtml($tblhtml, $mess_translate)
                 if ($Infofr !== false):
                     $infoleft = '';
                     $infotmp = '';
+                    $commandlist = read_json('commandes_mc.json');
+                    if ($commandlist){
+                        $infoserveur = str_replace('{{COMMANDPLUS}}', generate_list_commandes($commandlist, $tblhtml['headperso']), $infoserveur);
+                    } else {
+                        $infoserveur = str_replace('{{COMMANDPLUS}}', '', $infoserveur);
+                    }
                     foreach ($Infofr as $InfoKey => $InfoValue):
                         if (Is_Array($InfoValue)) {
                             $infotmp .= "<pre>";
@@ -122,7 +130,7 @@ function generepagehtml($tblhtml, $mess_translate)
                                     //à l'aide d'une commande rcon...
                                 }
                             }
-                            $infoplayers .= "                <tr>
+                            $infoplayers .= "                <tr id='playername'>
                     <td><span  class=\"lvluser" . $lvl . "\">" . htmlspecialchars($Player) . "</span></td>
                 </tr>";
                         }
@@ -169,9 +177,8 @@ function generepagehtml($tblhtml, $mess_translate)
     if ($config['minecraft_site']['footer']) {
         $body .= $footer;
     }
-    $body .= "</body>
-</html>";
-    $header = str_replace('{{STYLEPERSO}}', $tblhtml['styleperso'], $header);
+    $body .= "</body>\n</html>";
+    $header = str_replace('{{HEADPERSO}}', $tblhtml['headperso'], $header);
     return $header . translate_message($body, $mess_translate);
 }
 

@@ -41,13 +41,14 @@ if ($configserverproperties == '') {
 
 $serverproperties = '';
 $message = '';
-$mess_translate = '';
+//$mess_translate = '';
 $user = null;
 if (!isset($config['Language']['pays'])) {
     $config['Language']['pays'] = 'fr';
 }
-require_once($config['Chemin']['site'] . '/langues/index_' . $config['Language']['pays'] . '.php');
-
+$file_langue = $config['Chemin']['site'] . '/langues/langue_' . $config['Language']['pays'] . '.php';
+require_once($file_langue);
+global $mess_translate;
 // recuperer eventuel message
 $message = (isset($_POST['message'])) ? $_POST['message'] : '';
 include 'login.php';
@@ -73,7 +74,7 @@ if (($section == 'serveurproperties') && ($user->lvl() == 4)) {
     }
 }
 
-$styleperso = "";
+$headperso = "";
 include 'template.php';
 
 //Transmettre tout les paramètres dans un tableau
@@ -82,7 +83,7 @@ $tblvarhtml = array(
     'config' => $config,
     'user' => $user,
     'section' => $section,
-    'styleperso' => $styleperso,
+    'headperso' => $headperso,
     'message' => $message,
     'timer' => $timer,
     'Query' => $Query,

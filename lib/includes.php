@@ -189,12 +189,12 @@ function generate_tb_properties($tableau)
  */
 function validate_session($hashsession)
 {
-    global $config;
+    global $config; global $mess_translate;
     $result = null;
     $mysqli = new mysqli($config['Database']['host'], $config['Database']['dbuser'], $config['Database']['dbpass'], $config['Database']['dbname'], $config['Database']['port']);
     if ($mysqli->connect_errno) {
         //Erreur de connexion à mysql
-        throw new Exception(MESS_ERREURCONNECTMYSQL);
+        throw new Exception($mess_translate['{{MESS_ERREURCONNECTMYSQL}}']);
     } else {
         $hashsession = $mysqli->real_escape_string($hashsession);
         $requete = "SELECT `utilisateurs`.`username` FROM `utilisateurs` INNER JOIN `session` ON (`utilisateurs`.`iduser` = `session`.`utilisateurs_iduser`) WHERE `session`.`sessionhash` = '$hashsession'";

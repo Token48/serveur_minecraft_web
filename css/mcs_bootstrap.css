@@ -8312,3 +8312,9 @@ body {
     display: block;
     color: #afafaf;
 }
+
+.dropdown-menu {
+    max-height: 300px;
+    overflow: hidden;
+    overflow-y: auto;
+}

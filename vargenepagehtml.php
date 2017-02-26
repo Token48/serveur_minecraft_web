@@ -21,9 +21,9 @@ $header = "<!DOCTYPE html>
      
     <!-- BOOSTRAP EST UN FRAMEWORK CSS QUI PERMET DE STYLISER LE CODE CI-DESSOUS, CA CODE LE CSS A VOTRE PLACE -->
     <link rel=\"stylesheet\" href=\"css/mcs_bootstrap.css\">
-    <script src=\"js/jquery.js\"></script>
-    <script src=\"js/bootstrap.js\"></script>
-    {{STYLEPERSO}}
+    <script type=\"text/javascript\" src=\"js/jquery.js\"></script>
+    <script type=\"text/javascript\" src=\"js/bootstrap.js\"></script>
+{{HEADPERSO}}
 </head>
 ";
 
@@ -227,6 +227,7 @@ $infoserveur = "<!-- INFO SERVEUR -->
                 </table>
                 <!-- Envoie de commande -->
                 <table class=\"table table-bordered table-striped\">
+                    {{COMMANDPLUS}}
                     <thead>
                         <tr>
                             <th>{{MESS_LAUNCHCOMMAND}}</th>
@@ -238,13 +239,12 @@ $infoserveur = "<!-- INFO SERVEUR -->
                                 <form method=\"post\" role=\"form\">
                                     <div class=\"input-group\">
                                         <span class=\"input-group-addon\"><span class=\"glyphicon glyphicon-chevron-right\"></span></span>
-                                        <input type=\"text\" name=\"command\" class=\"form-control\" placeholder=\"{{MESS_INPUTCOMMAND}}\" data-cip-id=\"cIPJQ342845639\">
+                                        <input type=\"text\" name=\"command\" class=\"form-control\" title='Yoooo' placeholder=\"{{MESS_INPUTCOMMAND}}\" id=\"livalue\">
                                         <span class=\"input-group-btn\">
                                             <input type=\"submit\" name=\"submit\" class=\"btn btn-default\" value=\"{{MESS_INPUTSENDCOMMAND}}\">
                                         </span>
                                     </div>
-                                </form>
-        
+                                </form>      
                             </td>
                         </tr>
                     </tbody>
