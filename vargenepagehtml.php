@@ -34,7 +34,7 @@ $footer = "<!-- Footer -->
 <div class=\"section\">
   <div class=\"container\">
     <div class=\"row\">
-      <div class=\"backgrdfooter col-md-12 text-center\">© 2017 JMG</div>
+      <div class=\"backgrdfooter col-md-12 text-center\" id=\"footerjmg\"><span>© 2017 JMG (d'après le script original de <a href='https://www.youtube.com/watch?v=hKwxzRnjEBA&t=14s' target='_blank' alt=\"Chaîne youtube de ProfesseurCraft\">ProfesseurCraft</a>)</span></div>
     </div>
   </div>
 </div>

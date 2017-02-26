@@ -8318,3 +8318,19 @@ body {
     overflow: hidden;
     overflow-y: auto;
 }
+
+#footerjmg span {
+    padding: 14px 4px 8px 50px;
+    background-image: url("../images/logo_footer.png");
+    background-repeat: no-repeat;
+}
+
+#footerjmg a:link {
+    color: #9bd8eb;
+}
+#footerjmg a:hover {
+    color: #7cdabd;
+}
+#footerjmg a:visited {
+    color: #65a1bb;
+}
