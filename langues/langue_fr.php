@@ -6,7 +6,10 @@
  * Time: 18:42
  */
 
+$mess_translate['{{MESS_DELETEINSTALL}}'] = 'Effacer le répertoire \'<b style=\'color: blue\'>install</b>\' et son contenu.';
+
 // Bottom
+
 $mess_translate['{{MESS_MINECRAFTSERVER}}'] = 'Minecraft serveur';
 $mess_translate['{{MESS_ACCUEIL}}'] = 'Accueil';
 $mess_translate['{{MESS_PROPERTIE}}'] = 'Configuration';
@@ -34,6 +37,7 @@ $mess_translate['{{MESS_PROPERTIES}}'] = 'Propriétées';
 $mess_translate['{{MESS_VALUES}}'] = 'Valeurs';
 $mess_translate['{{MESS_RELOADMC}}'] = 'alert-warning,Minecraft,Vous devez redémarrer le serveur pour que les modifications soient prises en compte.';
 $mess_translate['{{MESS_PROPERTIEUNDECLARED}}'] = 'Cette propriété n\'est pas déclarée.';
+$mess_translate['{{MESS_FILENOTFOUD}}'] = 'alert-danger,configuration,Vérifiez le chemin pour accéder à <i>server.properties</i> dans le fichier <i>config.php</i>';
 
 //Login
 //Décomposé en 3 parties 1) type d'alerte, 2) message en gras, 3) message

@@ -15,7 +15,7 @@ $mysqli = new mysqli($config['Database']['host'], $config['Database']['dbuser'],
 if ($mysqli) {
     // éliminer les sessions périmées
     $time_actuelle = time();
-    $result = $mysqli->query("SELECT * FROM `session`");
+    $result = $mysqli->query("SELECT * FROM `".$config['Database']['tableprefix']."session`");
     if ($result) {
         $session = array();
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -36,7 +36,7 @@ if ($mysqli) {
                 }
             }
             if (retMktimest($session['expire']) < $time_actuelle) {
-                $resultdelete = $mysqli->query("DELETE FROM `session` WHERE `idsession` = '" . $session['idsession'] . "';"); // on efface l'entrée dans la base de donnée
+                $resultdelete = $mysqli->query("DELETE FROM `".$config['Database']['tableprefix']."session` WHERE `idsession` = '" . $session['idsession'] . "';"); // on efface l'entrée dans la base de donnée
             }
         }
     }
