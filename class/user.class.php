@@ -81,15 +81,12 @@ class user
             $uname = $mysqli->real_escape_string($uname); // NULL, \x00, \n, \r, \, ', " et \x1a éviter injection SQL
             if (isset($upass)) {
                 // nouvel utilisateur
-                $requete = "SELECT `iduser`, `username`, `date_inscription`, `email`, `password`, `ipuser`, `bannissement`, `levelutilisateur_lvlmembre` FROM `utilisateurs` WHERE `username` = '" . $uname . "';";
+                $requete = "SELECT `iduser`, `username`, `date_inscription`, `email`, `password`, `ipuser`, `bannissement`, `levelutilisateur_lvlmembre` FROM `".$config['Database']['tableprefix']."utilisateurs` WHERE `username` = '" . $uname . "';";
                 $result = $mysqli->query($requete);
                 if ($result) {
                     $this->init_user($result);
 
                     $result->close();
-                    if ($config['DEBUG']) {
-                        var_dump($uname, $upass, $this->_user_password);
-                    }
                     //Controller la validité du mot de passe
                     if (!$validuser = $this->check_user($upass)) {
                         //tester si pass cookie
@@ -99,10 +96,10 @@ class user
             } else {
                 // $upass est NULL on en déduit que c'est une session
                 // controller la session
-                $requete = "SELECT `session`.`idsession`, `session`.`sessionhash`, `session`.`expire`, `session`.`utilisateurs_iduser`
-                            FROM `session` INNER JOIN `utilisateurs`
-                            ON (`session`.`utilisateurs_iduser` = `utilisateurs`.`iduser`)
-                            WHERE `utilisateurs`.`username` = '$uname'";
+                $requete = "SELECT `".$config['Database']['tableprefix']."session`.`idsession`, `".$config['Database']['tableprefix']."session`.`sessionhash`, `".$config['Database']['tableprefix']."session`.`expire`, `".$config['Database']['tableprefix']."session`.`utilisateurs_iduser`
+                            FROM `".$config['Database']['tableprefix']."session` INNER JOIN `".$config['Database']['tableprefix']."utilisateurs`
+                            ON (`".$config['Database']['tableprefix']."session`.`utilisateurs_iduser` = `".$config['Database']['tableprefix']."utilisateurs`.`iduser`)
+                            WHERE `".$config['Database']['tableprefix']."utilisateurs`.`username` = '$uname'";
                 $result = $mysqli->query($requete);
                 if ($result) {
                     // tester si la session est valide (expiration + ip)
@@ -130,12 +127,12 @@ class user
                     if (retMktimest($session['expire']) < time()) {
                         setcookie('sessionhash', NULL, -1); // Effacer le cookie de session
                         $session['idsession'] = $mysqli->real_escape_string($session['idsession']);
-                        $result = $mysqli->query("DELETE FROM `session` WHERE `idsession` = '" . $session['idsession'] . "';"); // on efface l'entrée dans la base de donnée
+                        $result = $mysqli->query("DELETE FROM `".$config['Database']['tableprefix']."session` WHERE `idsession` = '" . $session['idsession'] . "';"); // on efface l'entrée dans la base de donnée
                         throw new Exception(MESS_ERREURSESSIONEXPIRE); // session expirée
                     } else {
                         //Session valide et utilisateur valide
                         $session['utilisateurs_iduser'] = $mysqli->real_escape_string($session['utilisateurs_iduser']);
-                        $requete = "SELECT `iduser`, `username`, `date_inscription`, `email`, `password`, `ipuser`, `bannissement`, `levelutilisateur_lvlmembre` FROM `utilisateurs` WHERE `iduser` = '" . $session['utilisateurs_iduser'] . "';";
+                        $requete = "SELECT `iduser`, `username`, `date_inscription`, `email`, `password`, `ipuser`, `bannissement`, `levelutilisateur_lvlmembre` FROM `".$config['Database']['tableprefix']."utilisateurs` WHERE `iduser` = '" . $session['utilisateurs_iduser'] . "';";
                         $result = $mysqli->query($requete);
                         if ($result) {
                             $this->init_user($result);
@@ -256,12 +253,12 @@ class user
             $graine = time() + $this->_user_id;
             $this->_user_session = sha1($graine);
             //Effacer toute les sessions ouverte pour cette utilisateur
-            $result = $mysqli->query("DELETE FROM `session` WHERE `utilisateurs_iduser` = '$sqlusersession';");
+            $result = $mysqli->query("DELETE FROM `".$config['Database']['tableprefix']."session` WHERE `utilisateurs_iduser` = '$sqlusersession';");
             //Ouvrir une nouvelle session
-            $requete = "INSERT INTO `session` VALUES (NULL, '$this->_user_session',";
+            $requete = "INSERT INTO `".$config['Database']['tableprefix']."session` VALUES (NULL, '$this->_user_session',";
             $requete .= " '" . date('Y-m-d H:i:s', time() + (24 * 60 * 60)) . "', " . $this->_user_id . ")";
         } else {
-            $requete = "UPDATE `spigot`.`session` SET `expire`='" . date('Y-m-d H:i:s', time() + (24 * 60 * 60)) . "' WHERE  `utilisateurs_iduser`='$sqlusersession';";
+            $requete = "UPDATE `spigot`.`".$config['Database']['tableprefix']."session` SET `expire`='" . date('Y-m-d H:i:s', time() + (24 * 60 * 60)) . "' WHERE  `utilisateurs_iduser`='$sqlusersession';";
         }
         $result = $mysqli->query($requete);
         if (!$result) {

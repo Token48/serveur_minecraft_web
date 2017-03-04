@@ -16,7 +16,11 @@ $session = null; //par défaut cession non valide ou inexistante
 if (isset($_COOKIE['sessionhash'])) {
 //récupérer l'utilisateur au cookie de session
     $username = '';
-    $session = validate_session($_COOKIE['sessionhash']); //Contrôle si la session existe
+    try {
+        $session = validate_session($_COOKIE['sessionhash']); //Contrôle si la session existe
+    } catch (Exception $err){
+        $message = $err->getMessage();
+    }
     if ($session != null) {
         //la session existe
         while ($row = $session->fetch_array(MYSQLI_ASSOC)) {

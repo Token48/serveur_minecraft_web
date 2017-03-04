@@ -62,15 +62,7 @@ function generepagehtml($tblhtml, $mess_translate)
                 </div>";
     } else {
         if ($tblhtml['message'] != '') {
-            //Générer Alert
-            //exemple:
-            //   Type     Emmeteur              Message
-            //alert-danger, MySql, Impossible d'établir une connection avec MySql
-            $message = explode(',', $tblhtml['message']);
-            $messageformat = str_replace('{{message[0]}}', $message[0], $messageformat); //type de l'alerte
-            $messageformat = str_replace('{{message[1]}}', $message[1], $messageformat); //émetteur de l'alerte
-            $messageformat = str_replace('{{message[2]}}', $message[2], $messageformat); //message de l'alerte
-            $body .= $messageformat;
+            $body .= generate_message($tblhtml['message'], $messageformat);
         }
         switch ($tblhtml['section']) {
             case 'infoserveur': //Page par défaut si l'utilisateur est logué
@@ -115,7 +107,7 @@ function generepagehtml($tblhtml, $mess_translate)
                             $lvl = 0; //Par défaut le joueur en ligne est lvl zéro
                             if ($ctrllvlsql) {
                                 $uname = $mysqli->real_escape_string($Player);
-                                $requete = "SELECT utilisateurs.levelutilisateur_lvlmembre FROM utilisateurs WHERE utilisateurs.username = '$uname'";
+                                $requete = "SELECT ".$config['Database']['tableprefix']."utilisateurs.levelutilisateur_lvlmembre FROM ".$config['Database']['tableprefix']."utilisateurs WHERE utilisateurs.username = '$uname'";
                                 //Rechercher la personne qui se trouve sur le serveur est dans la base de données
                                 $result = $mysqli->query($requete);
                                 if ($result) {
@@ -158,15 +150,19 @@ function generepagehtml($tblhtml, $mess_translate)
 
                 //break;
             case 'serveurproperties':
-                $tblserverproperties = readserverproperties($config['Sminecraft']['serverproperties']);
-                if ($user->lvl() != 4) {
+                $tblserverproperties = readserverproperties($config['ftp']['serverproperties']);
+                if (($user->lvl() != 4) && $tblserverproperties !== false) {
+                    //non op sur serveur mc juste lire la configuration
                     $tblproperties = generate_tb_properties($tblserverproperties);
                     $serverproterties = str_replace('{{PROPERTIE-VALUE}}', $tblproperties, $serverproterties);
                     $body .= $serverproterties;
-                } else {
+                } elseif ($tblserverproperties !== false) {
+                    //op authoriser les modifications
                     $formproperties = generate_form_serverproperties($tblserverproperties); //générer le formulaire
                     $serverprotertiesform = str_replace('{{INPUTFORM}}', $formproperties, $serverprotertiesform);
                     $body .= $serverprotertiesform;
+                } else {
+                    $body.= generate_message($GLOBALS['message'], $messageformat);
                 }
                 break;
             default:

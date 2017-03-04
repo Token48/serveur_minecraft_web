@@ -16,7 +16,7 @@ if (defined('INDEXPHP')) {
 function rcon($config)
 {
     try {
-        $rcon = new rcon($config['Sminecraft']['adresse'], $config['Sminecraft']['portrcon'], $config['Sminecraft']['passrcon']);
+        $rcon = new rcon($config['Sminecraft']['adresse'], $config['Sminecraft']['rconport'], $config['Sminecraft']['passrcon']);
         if (isset($_POST['submit'])) {
             $command = $_POST['command'];
             if (strpos($command, '/') === 0) {

@@ -14,84 +14,96 @@ function retMktimest($dbdate)
 
 /**
  * Retourne la page html à afficher
- * pour afficher le formulaire de modification server.propreties
+ * pour afficher le formulaire de modification server.properties
  * ou une chaine vide si il y a un problème.
  *
  * @param
- *            chemin du fichier de configuration ($config['Sminecraft']['serverproperties'])
- * @return array Formulaire HTML
+ *            chemin du fichier de configuration ($config['ftp']['serverproperties'])
+ * @return mixed array Formulaire HTML or false
  */
 function readserverproperties($configfile)
 {
-    global $user;
+    global $user; global $mess_translate;
     $serverproperties = array();
-    try {
-        if ($configfile != '') {
-            $handle = fopen($configfile, 'rb'); // ouvrir server.properties en lecture
-            if ($handle) {
-                // $serverproperties = fread($handle, filesize($config['Sminecraft']['serverproperties']));
-                /* Tant que l'on est pas à la fin du fichier */
-                while (!feof($handle)) {
-                    /* On lit la ligne courante */
-                    $buffer = trim(fgets($handle));
-                    $posdiez = strpos($buffer, '#');
-                    if ($posdiez !== 0) //Ce n'est pas un commentaire
-                    {
-                        //$serverproperties .= $buffer . '<br />';
-                        $value = explode('=', $buffer);
-                        if ($value[0] != '') {
-                            if (isset($value[1])) {
-                                $serverproperties[$value[0]] = $value[1];
-                                if ($value[0] == 'rcon.password' && $user->lvl() != 4) {
-                                    //Cacher le mot de passe rcon si pas OP
-                                    $serverproperties[$value[0]] = '********';
+    if (file_exists($configfile)) {
+        try {
+            if ($configfile != '') {
+                $handle = fopen($configfile, 'rb'); // ouvrir server.properties en lecture
+                if ($handle) {
+                    /* Tant que l'on est pas à la fin du fichier */
+                    while (!feof($handle)) {
+                        /* On lit la ligne courante */
+                        $buffer = trim(fgets($handle));
+                        $posdiez = strpos($buffer, '#');
+                        if ($posdiez !== 0) //Ce n'est pas un commentaire
+                        {
+                            //$serverproperties .= $buffer . '<br />';
+                            $value = explode('=', $buffer);
+                            if ($value[0] != '') {
+                                if (isset($value[1])) {
+                                    $serverproperties[$value[0]] = $value[1];
+                                    if ($value[0] == 'rcon.password' && $user->lvl() != 4) {
+                                        //Cacher le mot de passe rcon si pas OP
+                                        $serverproperties[$value[0]] = '********';
+                                    }
+                                } else {
+                                    $serverproperties[$value[0]] = '';
                                 }
-                            } else {
-                                $serverproperties[$value[0]] = '';
                             }
                         }
                     }
+                    /* On ferme le fichier */
+                    fclose($handle);
                 }
-                /* On ferme le fichier */
-                fclose($handle);
             }
+        } catch (Exception $err) {
+            $GLOBALS['message'] = $err->getMessage();
         }
-    } catch (Exception $err) {
-        $GLOBALS['message'] = $err->getMessage();
+    } else {
+        $GLOBALS['message'] = $mess_translate['{{MESS_FILENOTFOUD}}'];
+        $serverproperties = false;
     }
     return $serverproperties;
 }
 
+/**
+ * @param $configfile
+ * @param $tblproperties
+ */
 function writeserverproperties($configfile, $tblproperties)
 {
+    global $mess_translate;
     $debfile = "#Minecraft server properties\n#" . date('D M d H:i:s T Y');
-    try {
-        $handle = fopen($configfile, 'wb'); // ouvrir server.properties en lecture
-        //$handle = true;
-        if ($handle) {
-            fputs($handle, $debfile . "\n");
-            foreach ($tblproperties as $key => $don) {
-                $pos_ = strpos($key, '_');
-                if ($pos_ === 0) {
-                    //premier caractère = '_' donc c'est une propriété non déclarée dans le fichier server.properties
-                    if ($don != '') {
-                        //Il lui a été attribué une valeur
-                        $trans = array("_" => "");
-                        $key = strtr($key, $trans); //supprimer _ au debut du nom de la propriété
+    if (file_exists($configfile)) {
+        try {
+            $handle = fopen($configfile, 'wb'); // ouvrir server.properties en lecture
+            //$handle = true;
+            if ($handle) {
+                fputs($handle, $debfile . "\n");
+                foreach ($tblproperties as $key => $don) {
+                    $pos_ = strpos($key, '_');
+                    if ($pos_ === 0) {
+                        //premier caractère = '_' donc c'est une propriété non déclarée dans le fichier server.properties
+                        if ($don != '') {
+                            //Il lui a été attribué une valeur
+                            $trans = array("_" => "");
+                            $key = strtr($key, $trans); //supprimer _ au debut du nom de la propriété
+                        }
+                    }
+                    $pos_ = strpos($key, '_');
+                    if ($pos_ !== 0) {
+                        //Deuxième contrôle au cas ou $key ne commence pas '_' (suppression de '_')
+                        fputs($handle, $key . '=' . $don . "\n");
                     }
                 }
-                $pos_ = strpos($key, '_');
-                if ($pos_ !== 0) {
-                    //Deuxième contrôle au cas ou $key ne commence pas '_' (suppression de '_')
-                    fputs($handle, $key . '=' . $don . "\n");
-                }
+                fclose($handle);
             }
-            fclose($handle);
+        } catch (Exception $err) {
+            $GLOBALS['message'] = $err->getMessage();
         }
-    } catch (Exception $err) {
-        $GLOBALS['message'] = $err->getMessage();
+    } else {
+        $GLOBALS['message'] = $mess_translate['{{MESS_FILENOTFOUD}}'];
     }
-
 }
 
 /**
@@ -170,12 +182,10 @@ function generate_form_serverproperties($tableau)
  */
 function generate_tb_properties($tableau)
 {
-    //                            <td class="td1color1">{{PROPERTIE}}</td><td class="td1color2">{{VALEUR}}</td>
     $tbl = '';
     $tdx = 1;
     foreach ($tableau as $name => $value) {
         $tdx = ($tdx == 1) ? 2 : 1;
-        //$tbl .="<tr><td class=\"td".$tdx."color1\">$name</td><td class=\"td".$tdx."color2\">$value</td></tr>
         $tbl .= "<tr><td class=\"td" . $tdx . "color1\">$name</td><td>$value</td></tr>
                         ";
     }
@@ -191,13 +201,13 @@ function validate_session($hashsession)
 {
     global $config; global $mess_translate;
     $result = null;
-    $mysqli = new mysqli($config['Database']['host'], $config['Database']['dbuser'], $config['Database']['dbpass'], $config['Database']['dbname'], $config['Database']['port']);
+    $mysqli = @new mysqli($config['Database']['host'], $config['Database']['dbuser'], $config['Database']['dbpass'], $config['Database']['dbname'], $config['Database']['port']);
     if ($mysqli->connect_errno) {
         //Erreur de connexion à mysql
         throw new Exception($mess_translate['{{MESS_ERREURCONNECTMYSQL}}']);
     } else {
         $hashsession = $mysqli->real_escape_string($hashsession);
-        $requete = "SELECT `utilisateurs`.`username` FROM `utilisateurs` INNER JOIN `session` ON (`utilisateurs`.`iduser` = `session`.`utilisateurs_iduser`) WHERE `session`.`sessionhash` = '$hashsession'";
+        $requete = "SELECT `".$config['Database']['tableprefix']."utilisateurs`.`username` FROM `".$config['Database']['tableprefix']."utilisateurs` INNER JOIN `".$config['Database']['tableprefix']."session` ON (`".$config['Database']['tableprefix']."utilisateurs`.`iduser` = `".$config['Database']['tableprefix']."session`.`utilisateurs_iduser`) WHERE `".$config['Database']['tableprefix']."session`.`sessionhash` = '$hashsession'";
         $result = $mysqli->query($requete);
         if ($result->num_rows == 0) {
             //pas trouvé l'utilisateur correspondant
@@ -207,7 +217,7 @@ function validate_session($hashsession)
     return $result;
 }
 
-/*
+/**
 *  Function ustr_replace for "unique str_replace"
 *  Replace a string only once in a string
 *
@@ -221,13 +231,6 @@ function validate_session($hashsession)
 *
 *  return string
 */
-/**
- * @param $search
- * @param $replace
- * @param $subject
- * @param int $cur
- * @return mixed
- */
 function ustr_replace($search, $replace, $subject, $cur = 0)
 {
     $pos = strpos($subject, $search, $cur);
@@ -235,5 +238,24 @@ function ustr_replace($search, $replace, $subject, $cur = 0)
         $subject = substr_replace($subject, $replace, (int)strpos($subject, $search, $cur), strlen($search));
     }
     return $subject;
+}
+
+/**
+ * Formate le message à afficher
+ * @param $messagecomplet
+ * @param $messageformat
+ * @return mixed
+ */
+function generate_message($messagecomplet, $messageformat)
+{
+    //Générer Alert
+    //exemple:
+    //   Type     Emmeteur              Message
+    //alert-danger, MySql, Impossible d'établir une connection avec MySql
+    $message = explode(',', $messagecomplet);
+    $messageformat = str_replace('{{message[0]}}', $message[0], $messageformat); //type de l'alerte
+    $messageformat = str_replace('{{message[1]}}', $message[1], $messageformat); //émetteur de l'alerte
+    $messageformat = str_replace('{{message[2]}}', $message[2], $messageformat); //message de l'alerte
+    return $messageformat;
 }
 ?>
