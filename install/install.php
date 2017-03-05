@@ -18,7 +18,7 @@ require_once($file_langue);
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/mcs_bootstrap.css">
+    <link rel="stylesheet" href="../css/mcs_bootstrap.css">
     <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
     <script type="text / javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
@@ -68,8 +68,8 @@ if (!isset($_POST['page'])) {
         <script type="text/javascript">
         $(function(){
             $("#valid").click(function(){
-                if ($('#tblprefix').val() != ''){
-                    $('#tblprefix').val($('#tblprefix').val()+'_');
+                if ($('#tblprefix').prev().val() != ''){
+                    $('#tblprefix').prev().val($('#tblprefix').prev().val()+'_');
                 }
                 var bordercolor = $("#valid").css('border-color');
                 $("#dbhost").text("");
@@ -188,7 +188,7 @@ if (!isset($_POST['page'])) {
 
 //MySQL
 \$config['Database']['dbname'] = '".$_POST['dbname']."'; //Nom de la base de données
-\$config['Database']['tableprefix'] = '$tblprefix'.'_'; //Préfix pour le nom des tables dans la base de données
+\$config['Database']['tableprefix'] = '$tblprefix'; //Préfix pour le nom des tables dans la base de données
 \$config['Database']['dbuser'] = '".$_POST['dbuser']."'; //Nom de l'utilisateur de la base de données
 \$config['Database']['dbpass'] = '".$_POST['dbpass']."'; //Mot de passe pour l'utilisateur de la base de données
 \$config['Database']['host'] = '".$_POST['dbhost']."'; //Url de la base de données
