@@ -47,12 +47,6 @@ if (isset($_COOKIE['sessionhash'])) {
     }
 }
 if ($session == null) {
-    /**************************************/
-    /*              A enlever             */
-    /**************************************/
-    /** $_POST['username'] = 'test1'; /**/
-    /** $_POST['password'] = 'test1';/**/
-    /**************************************/
     $username = (isset($_POST['username'])) ? $_POST['username'] : ((isset($_COOKIE['username'])) ? $_COOKIE['username'] : '');
     $password = (isset($_POST['password'])) ? $_POST['password'] : ((isset($_COOKIE['password'])) ? $_COOKIE['password'] : '');
     $cbsaveuser = (isset($_POST['cbsaveuser'])) ? $_POST['cbsaveuser'] : '';

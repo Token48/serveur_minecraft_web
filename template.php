@@ -42,11 +42,15 @@ function generepagehtml($tblhtml, $mess_translate)
     }
 
     if ($config['minecraft_site']['navbar']) {
+        //<a href=\"#\"><span class=\"glyphicon glyphicon-log-in\"></span>&nbsp;&nbsp;$username</a>
         $navbar = str_replace('{{ETATSERV}}', $tblhtml['etatserv'], $navbar);
         if ($username != '') {
-            $navbaruser = "                                <li>
-                                    <a href=\"#\"><span class=\"glyphicon glyphicon-log-in\"></span>&nbsp;&nbsp;$username</a>
-                                </li>";
+            $navbaruser = "        <li class='dropdown'>
+                                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">$username<span class=\"caret\"></span></a>
+                                        <ul class='dropdown-menu' role=\"menu\">
+                                            <li ><a href = \"?section=logout\" ><span class=\"glyphicon glyphicon-log-in\" ></span >&nbsp;&nbsp; Se déconnecter </a ></li >
+                                        </ul >
+                                    </li>";
         } else {
             $navbaruser = '';
         }
@@ -70,7 +74,7 @@ function generepagehtml($tblhtml, $mess_translate)
                 if ($Infofr !== false):
                     $infoleft = '';
                     $infotmp = '';
-                    $commandlist = read_json('commandes_mc.json');
+                    $commandlist = read_json('commandes_mc.jsons');
                     if ($commandlist){
                         $infoserveur = str_replace('{{COMMANDPLUS}}', generate_list_commandes($commandlist, $tblhtml['headperso']), $infoserveur);
                     } else {
@@ -150,6 +154,7 @@ function generepagehtml($tblhtml, $mess_translate)
 
                 //break;
             case 'serveurproperties':
+                //Afficher les propriétés du serveur
                 $tblserverproperties = readserverproperties($config['ftp']['serverproperties']);
                 if (($user->lvl() != 4) && $tblserverproperties !== false) {
                     //non op sur serveur mc juste lire la configuration

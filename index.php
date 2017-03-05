@@ -31,7 +31,13 @@ if (file_exists('install/install.php')){
 }
 
 $section = (isset($_POST['section'])) ? $_POST['section'] : ((isset($_GET['section'])) ? $_GET['section'] : ''); //initaliser section
-
+if ($section == 'logout'){
+    setcookie('user', NULL, -1);
+    setcookie('password', NULL, -1);
+    setcookie('sessionhash', NULL, -1);
+    $_COOKIE['sessionhash'] = '';
+    $section = '';
+}
 require_once('minecraft.php');
 
 $gotimer = microtime(); //start chrono
@@ -87,7 +93,6 @@ $headperso = "";
 include 'template.php';
 
 //Transmettre tout les paramètres dans un tableau
-
 $tblvarhtml = array(
     'config' => $config,
     'user' => $user,

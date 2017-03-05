@@ -20,9 +20,10 @@ $header = "<!DOCTYPE html>
     <title>Serveur Minecraft</title>
      
     <!-- BOOSTRAP EST UN FRAMEWORK CSS QUI PERMET DE STYLISER LE CODE CI-DESSOUS, CA CODE LE CSS A VOTRE PLACE -->
+    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">
     <link rel=\"stylesheet\" href=\"css/mcs_bootstrap.css\">
-    <script type=\"text/javascript\" src=\"js/jquery.js\"></script>
-    <script type=\"text/javascript\" src=\"js/bootstrap.js\"></script>
+    <script type=\"text/javascript\" src=\"http://code.jquery.com/jquery.js\"></script>
+    <script type=\"text / javascript\" src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>
 {{HEADPERSO}}
 </head>
 ";
@@ -34,7 +35,7 @@ $footer = "<!-- Footer -->
 <div class=\"section\">
   <div class=\"container\">
     <div class=\"row\">
-      <div class=\"backgrdfooter col-md-12 text-center\" id=\"footerjmg\"><span>© 2017 JMG (d'après le script original de <a href='https://www.youtube.com/watch?v=hKwxzRnjEBA&t=14s' target='_blank' alt=\"Chaîne youtube de ProfesseurCraft\">ProfesseurCraft</a>)</span></div>
+      <div class=\"backgrdblue col-md-12 text-center\" id=\"footerjmg\"><span>© 2017 JMG (d'après le script original de <a href='https://www.youtube.com/watch?v=hKwxzRnjEBA&t=14s' target='_blank' alt=\"Chaîne youtube de ProfesseurCraft\">ProfesseurCraft</a>)</span></div>
     </div>
   </div>
 </div>
@@ -73,9 +74,7 @@ $navbar = "<!--  NavBar -->
                                 </li>
                             </ul>
                             <ul class=\"nav navbar-nav navbar-right\">
-                                <li>
-                                {{USERNAME}}
-                                </li>
+                            {{USERNAME}}
                             <ul>
                         </div>
                     </div>
@@ -94,7 +93,7 @@ $banniere = "<!-- Banniere -->
 <div class=\"section section-primary\">
     <div class=\"container\">
         <div class=\"row\">
-            <div class=\"col-md-12\">
+            <div class=\"col-md-12 backgrdblue paddingbanniere\">
                 <a href=\"#\"><img src=\"images/banniere.png\" class=\"center-block img-responsive\" alt = \"Banniere\"></a>
             </div>
         </div>
@@ -239,7 +238,7 @@ $infoserveur = "<!-- INFO SERVEUR -->
                                 <form method=\"post\" role=\"form\">
                                     <div class=\"input-group\">
                                         <span class=\"input-group-addon\"><span class=\"glyphicon glyphicon-chevron-right\"></span></span>
-                                        <input type=\"text\" name=\"command\" class=\"form-control\" title='Yoooo' placeholder=\"{{MESS_INPUTCOMMAND}}\" id=\"livalue\">
+                                        <input type=\"text\" name=\"command\" class=\"form-control\" title='{{MESS_TITLECMD}}' placeholder=\"{{MESS_INPUTCOMMAND}}\" id=\"livalue\">
                                         <span class=\"input-group-btn\">
                                             <input type=\"submit\" name=\"submit\" class=\"btn btn-default\" value=\"{{MESS_INPUTSENDCOMMAND}}\">
                                         </span>

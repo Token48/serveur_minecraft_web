@@ -22,6 +22,7 @@ $mess_translate['{{MESS_PLAYERS}}'] = 'Joueurs';
 $mess_translate['{{MESS_NOTPLAYERSFOUND}}'] = 'Aucun joueur en ligne';
 $mess_translate['{{MESS_LAUNCHCOMMAND}}'] = 'Envoyer une commande';
 $mess_translate['{{MESS_INPUTCOMMAND}}'] = 'Entrez votre commande';
+$mess_translate['{{MESS_TITLECMD}}'] = 'Entrez votre commande à envoyer au serveur';
 $mess_translate['{{MESS_INPUTSENDCOMMAND}}'] = 'Envoyer';
 $mess_translate['{{MESS_INPUTSENDLOGIN}}'] = 'Connexion';
 $mess_translate['{{MESS_QUERIEDIN}}'] = 'fourni en ';
