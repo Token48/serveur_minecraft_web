@@ -32,10 +32,11 @@ if (file_exists('install/install.php')){
 
 $section = (isset($_POST['section'])) ? $_POST['section'] : ((isset($_GET['section'])) ? $_GET['section'] : ''); //initaliser section
 if ($section == 'logout'){
+    //L'utilisateur c'est déconnecté
     setcookie('user', NULL, -1);
     setcookie('password', NULL, -1);
     setcookie('sessionhash', NULL, -1);
-    $_COOKIE['sessionhash'] = '';
+    $_COOKIE['sessionhash'] = ''; // /!\ Si pas effacer l'utlisateur est reconnecté par login.php
     $section = '';
 }
 require_once('minecraft.php');

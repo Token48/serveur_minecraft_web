@@ -74,7 +74,7 @@ function generepagehtml($tblhtml, $mess_translate)
                 if ($Infofr !== false):
                     $infoleft = '';
                     $infotmp = '';
-                    $commandlist = read_json('commandes_mc.jsons');
+                    $commandlist = read_json('commandes_mc.json');
                     if ($commandlist){
                         $infoserveur = str_replace('{{COMMANDPLUS}}', generate_list_commandes($commandlist, $tblhtml['headperso']), $infoserveur);
                     } else {
@@ -112,7 +112,7 @@ function generepagehtml($tblhtml, $mess_translate)
                             if ($ctrllvlsql) {
                                 $uname = $mysqli->real_escape_string($Player);
                                 $requete = "SELECT ".$config['Database']['tableprefix']."utilisateurs.levelutilisateur_lvlmembre FROM ".$config['Database']['tableprefix']."utilisateurs WHERE utilisateurs.username = '$uname'";
-                                //Rechercher la personne qui se trouve sur le serveur est dans la base de données
+                                //Rechercher si la personne qui se trouve sur le serveur est dans la base de données
                                 $result = $mysqli->query($requete);
                                 if ($result) {
                                     //lvl trouvé

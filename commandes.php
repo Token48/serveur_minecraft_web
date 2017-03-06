@@ -56,7 +56,7 @@ function generate_list_commandes($obj_commande, &$headperso){
         $headperso .= "\n            ".str_replace('-', '_', $key).": \"$value[0]\",";
         $tamponhtml .= "                        <li><a>$key</a></li>\n";
     }
-    $headperso .="\n        }\n    </script>";
+    $headperso .="\n        }\n    </script>\n";
     $headperso .="    <script type=\"text/javascript\" src='js/myjs.js'></script>";
     $tamponhtml .= "                    </ul>\n                </div>
             </div>\n        </div>\n    </div>\n</div>\n<!-- /Liste commandes -->\n";
