@@ -33,18 +33,22 @@ $mess_translate['{{MESS_INPUTUSERNAME}}'] = 'Pseudo';
 $mess_translate['{{MESS_INPUTPASSWORD}}'] = 'Mot de passe';
 $mess_translate['{{MESS_CBSAVEUSER}}'] = 'Rester connecté.';
 
+//Login erreur
+//Décomposé en 3 parties 1) type d'alerte, 2) message en gras, 3) message
+$mess_translate['{{MESS_ERREURLOGIN}}'] = 'alert-warning,Login,Erreur de connexion. Le nom ou le mot de passe que vous avez rentré est incorrect!';
+$mess_translate['{{MESS_ERREURSESSIONOPEN}}'] = 'alert-danger,Session,Impossible de créer une session!';
+$mess_translate['{{MESS_ERREURSESSIONEXPIRE}}'] = 'alert-info,Session,Session expirée.';
+
+//Menu utilisateur (navbar)
+$mess_translate['{{MYPROFIL}}'] = 'Mon profil';
+$mess_translate['{{LOGOUT}}'] = 'Se déconnecter';
+
 //server.properties
 $mess_translate['{{MESS_PROPERTIES}}'] = 'Propriétées';
 $mess_translate['{{MESS_VALUES}}'] = 'Valeurs';
 $mess_translate['{{MESS_RELOADMC}}'] = 'alert-warning,Minecraft,Vous devez redémarrer le serveur pour que les modifications soient prises en compte.';
 $mess_translate['{{MESS_PROPERTIEUNDECLARED}}'] = 'Cette propriété n\'est pas déclarée.';
 $mess_translate['{{MESS_FILENOTFOUD}}'] = 'alert-danger,configuration,Vérifiez le chemin pour accéder à <i>server.properties</i> dans le fichier <i>config.php</i>';
-
-//Login
-//Décomposé en 3 parties 1) type d'alerte, 2) message en gras, 3) message
-$mess_translate['{{MESS_ERREURLOGIN}}'] = 'alert-warning,Login,Erreur de connexion. Le nom ou le mot de passe que vous avez rentré est incorect!';
-$mess_translate['{{MESS_ERREURSESSIONOPEN}}'] = 'alert-danger,Session,Impossible de créer une session!';
-$mess_translate['{{MESS_ERREURSESSIONEXPIRE}}'] = 'alert-info,Session,Session expirée.';
 
 //Rcon
 $mess_translate['{{MESS_ERREURFSOCKOPEN}}'] = 'alert-info,Minecraft,Le serveur est arrêté!';

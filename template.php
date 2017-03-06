@@ -46,9 +46,11 @@ function generepagehtml($tblhtml, $mess_translate)
         $navbar = str_replace('{{ETATSERV}}', $tblhtml['etatserv'], $navbar);
         if ($username != '') {
             $navbaruser = "        <li class='dropdown'>
-                                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">$username<span class=\"caret\"></span></a>
+                                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\"><span class=\"glyphicon glyphicon-user\" ></span >$username<span class=\"caret\"></span></a>
                                         <ul class='dropdown-menu' role=\"menu\">
-                                            <li ><a href = \"?section=logout\" ><span class=\"glyphicon glyphicon-log-in\" ></span >&nbsp;&nbsp; Se déconnecter </a ></li >
+                                            <li ><a href = \"?section=profil\" ><span class=\"glyphicon glyphicon-cog\" ></span >&nbsp;&nbsp;{{MYPROFIL}}</a ></li >
+                                            <li role=\"separator\" class=\"divider\"></li>
+                                            <li ><a href = \"?section=logout\" ><span class=\"glyphicon glyphicon-log-in\" ></span >&nbsp;&nbsp;{{LOGOUT}}</a ></li >
                                         </ul >
                                     </li>";
         } else {
