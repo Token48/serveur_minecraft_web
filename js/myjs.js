@@ -20,7 +20,9 @@ $(function(){
         $('#livalue').val($('#livalue').val() + $(this).text());
         $('#livalue').focus(); //donner le focus à livalue
     });
+
     $("#selectlangue").change(function(){
+        //poster le formulaire de changement de langue
         $("#formlangue").submit();
     });
 });
