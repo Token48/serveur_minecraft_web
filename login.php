@@ -61,8 +61,8 @@ if ($session == null) {
         }
         if ($cbsaveuser) {
             //créer les cookies
-            setcookie('username', $user->username(), time() + 3600 * 24 * 90); // $_COOKIE['username'] valable 90 jours
-            setcookie('password', $user->password(), time() + 3600 * 24 * 90); // $_COOKIE['password'] valable 90 jours
+            setcookie('username', $user->username(), time() + 3600 * 24 * 365); // $_COOKIE['username'] valable 365 jours
+            setcookie('password', $user->password(), time() + 3600 * 24 * 365); // $_COOKIE['password'] valable 365 jours
         } else {
             // Effacer les cookies
             setcookie('user', NULL, -1);

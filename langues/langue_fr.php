@@ -4,7 +4,15 @@
  * User: JeanMarie
  * Date: 23/02/2017
  * Time: 18:42
+ * Si vous rajoutez une langue, complétez $tbl_langues dans tous les fichier langues_xx.php
+ * 'les lettres du pays' => 'Le_nom_de_la_langue'
+ * ex: 'de' => 'Allemand', 'ru' => 'Russe'...
+ * ce qui donne langue_de.php et langue_ru.php
  */
+
+//Langue
+$mess_translate['{{MESS_LANGUE}}'] = 'Langues';
+$tbl_langues = array('uk' => 'Anglais', 'fr' => 'Français');
 
 $mess_translate['{{MESS_DELETEINSTALL}}'] = 'Effacer le répertoire \'<b style=\'color: blue\'>install</b>\' et son contenu.';
 
@@ -44,11 +52,11 @@ $mess_translate['{{MYPROFIL}}'] = 'Mon profil';
 $mess_translate['{{LOGOUT}}'] = 'Se déconnecter';
 
 //server.properties
-$mess_translate['{{MESS_PROPERTIES}}'] = 'Propriétées';
+$mess_translate['{{MESS_PROPERTIES}}'] = 'Propriétés';
 $mess_translate['{{MESS_VALUES}}'] = 'Valeurs';
 $mess_translate['{{MESS_RELOADMC}}'] = 'alert-warning,Minecraft,Vous devez redémarrer le serveur pour que les modifications soient prises en compte.';
 $mess_translate['{{MESS_PROPERTIEUNDECLARED}}'] = 'Cette propriété n\'est pas déclarée.';
-$mess_translate['{{MESS_FILENOTFOUD}}'] = 'alert-danger,configuration,Vérifiez le chemin pour accéder à <i>server.properties</i> dans le fichier <i>config.php</i>';
+$mess_translate['{{MESS_FILENOTFOUD}}'] = 'alert-danger,Configuration,Vérifiez le chemin pour accéder à <i>server.properties</i> dans le fichier <i>config.php</i>.';
 
 //Rcon
 $mess_translate['{{MESS_ERREURFSOCKOPEN}}'] = 'alert-info,Minecraft,Le serveur est arrêté!';
@@ -59,3 +67,6 @@ $mess_translate['{{MESS_LSTCOMMANDES}}'] = 'Liste des commandes';
 // Mysql
 $mess_translate['{{MESS_ERREURCLOSEMYSQL}}'] = 'alert-danger, MySql, Une erreur c\'est produite à la fermeture de MySql';
 $mess_translate['{{MESS_ERREURCONNECTMYSQL}}'] = 'alert-danger, MySql, Impossible d\'établir une connection avec MySql';
+
+//Footer
+$mess_translate['{{MESS_FOOTER1}}'] = 'd\'après le script original de ';

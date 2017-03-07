@@ -20,12 +20,32 @@ if (!file_exists('config.php')){
 
 require_once('config.php');
 
+//Choix de la langue d'affichage
+$getlang = (isset($_POST['selectlangue'])) ? $_POST['selectlangue'] : '';
+if ($getlang !=''){
+    setcookie('langue', $getlang, time() + 3600 * 24 * 365); //valable 365 jours
+    $_COOKIE["langue"] = $getlang;
+}
+$config['Language']['pays'] = (isset($_COOKIE["langue"])) ? $_COOKIE["langue"] : $config['Language']['pays']; //aucune valeur definit? prendre la langue par défaut
 $file_langue = $config['Chemin']['site'] . '/langues/langue_' . $config['Language']['pays'] . '.php';
 require_once($file_langue);
+
+//Footer langue
+$listpays = '';
+foreach ($tbl_langues as $key => $value){
+    if ($key == $config['Language']['pays']) {
+        //langue d'affichage
+        $selected = " selected=\"selected\"";
+    } else {
+        $selected = '';
+    }
+    $listpays .="\n                        <option value=\"$key\"$selected>$value</option>";
+}
+
 global $mess_translate;
 
 //Script installer tester si install effacer
-if (file_exists('install/install.php')){
+if (file_exists('install/install.php') && !DEVELOPPEUR){
     echo "<h1 align=\"center\">Minecraft Web</h1>\n<br><h2 align=\"center\">".str_replace('{{MESS_DELETEINSTALL}}', $mess_translate['{{MESS_DELETEINSTALL}}'], '{{MESS_DELETEINSTALL}}')."</h2>";
     die;
 }
@@ -100,6 +120,7 @@ $tblvarhtml = array(
     'section' => $section,
     'headperso' => $headperso,
     'message' => $message,
+    'listpays' => $listpays,
     'timer' => $timer,
     'Query' => $Query,
     'menuconfigonoff' => $menuconfigonoff,

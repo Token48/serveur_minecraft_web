@@ -24,7 +24,8 @@ $header = "<!DOCTYPE html>
     <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css\" integrity=\"sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp\" crossorigin=\"anonymous\">
     <link rel=\"stylesheet\" href=\"./css/mcs_bootstrap.css\">
     <script type=\"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js\"></script>
-    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\" integrity=\"sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa\" crossorigin=\"anonymous\"></script>
+    <script type=\"text/javascript\" src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\" integrity=\"sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa\" crossorigin=\"anonymous\"></script>
+    <script type=\"text/javascript\" src=\"js/myjs.js\"></script>
 {{HEADPERSO}}
 </head>
 ";
@@ -36,7 +37,17 @@ $footer = "<!-- Footer -->
 <div class=\"section\">
   <div class=\"container\">
     <div class=\"row\">
-      <div class=\"backgrdblue col-md-12 text-center\" id=\"footerjmg\"><span>© 2017 JMG (d'après le script original de <a href='https://www.youtube.com/watch?v=hKwxzRnjEBA&t=14s' target='_blank' alt=\"Chaîne youtube de ProfesseurCraft\">ProfesseurCraft</a>)</span></div>
+        <div class=\"backgrdblue col-md-12\">
+            <div class='float-center'  id=\"footerlink\"><span id=\"footerjmg\">© 2017 JMG ({{MESS_FOOTER1}}<a href=\"https://www.youtube.com/watch?v=hKwxzRnjEBA&amp;t=14s\" target=\"_blank\" alt=\"Chaîne youtube de ProfesseurCraft\">ProfesseurCraft</a>)</span>
+                <div class='float-right' >
+                    <form action='index.php' method='post' id='formlangue'>
+                        <select name='selectlangue' id='selectlangue'>
+                            <optgroup label=\"{{MESS_LANGUE}}\">{{LIST_LANGUE}}
+                        </select>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
   </div>
 </div>

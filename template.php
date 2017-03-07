@@ -178,7 +178,7 @@ function generepagehtml($tblhtml, $mess_translate)
         }
     }
     if ($config['minecraft_site']['footer']) {
-        $body .= $footer;
+        $body .= str_replace('{{LIST_LANGUE}}',$tblhtml['listpays'], $footer) ;
     }
     $body .= "</body>\n</html>";
     $header = str_replace('{{HEADPERSO}}', $tblhtml['headperso'], $header);
