@@ -6851,21 +6851,33 @@ body {
     overflow-y: auto;
 }
 
-#footerjmg span {
+#footerjmg {
     padding: 14px 4px 8px 50px;
     background-image: url("../images/logo_footer.png");
     background-repeat: no-repeat;
 }
 
-#footerjmg a:link {
+#footerlink a:link {
     color: #9bd8eb;
 }
-#footerjmg a:hover {
+#footerlink a:hover {
     color: #7cdabd;
 }
-#footerjmg a:visited {
+#footerlink a:visited {
     color: #65a1bb;
 }
- .paddingbanniere {
+
+.paddingbanniere {
      padding: 10px;
- }
+}
+
+.float-center {
+  text-align: center;
+  float: start;
+}
+.float-right {
+  float: right;
+}
+.float-left {
+  float: left;
+}

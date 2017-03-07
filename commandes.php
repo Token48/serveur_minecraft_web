@@ -48,6 +48,7 @@ function generate_list_commandes($obj_commande, &$headperso){
                     <ul class=\"dropdown-menu scrollable-menu\"  id='commandes'>\n";
     //récupérer la liste des commandes + syntax + explications
     $lstcommandes = $obj_commande->{'commandes'};
+    /* /!\ IMPORTANT ne pas faire '$headerperso =' car on écrase le headerperso déja existant /!\ */
     $headperso .="    <script type=\"text/javascript\">\n        var  syntax_commande = {";
     foreach ($lstcommandes as $key=>$value){
         //générer un tableau $commandes[Nom_de_la_commande]=>[syntax][explication]
@@ -57,7 +58,6 @@ function generate_list_commandes($obj_commande, &$headperso){
         $tamponhtml .= "                        <li><a>$key</a></li>\n";
     }
     $headperso .="\n        }\n    </script>\n";
-    $headperso .="    <script type=\"text/javascript\" src='js/myjs.js'></script>";
     $tamponhtml .= "                    </ul>\n                </div>
             </div>\n        </div>\n    </div>\n</div>\n<!-- /Liste commandes -->\n";
     return $tamponhtml;

@@ -19,5 +19,8 @@ $(function(){
         //Click sur un nom de joueur en ligne
         $('#livalue').val($('#livalue').val() + $(this).text());
         $('#livalue').focus(); //donner le focus à livalue
-    })
+    });
+    $("#selectlangue").change(function(){
+        $("#formlangue").submit();
+    });
 });
