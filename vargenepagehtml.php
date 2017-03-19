@@ -25,7 +25,7 @@ $header = "<!DOCTYPE html>
     <link rel=\"stylesheet\" href=\"./css/mcs_bootstrap.css\">
     <script type=\"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js\"></script>
     <script type=\"text/javascript\" src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\" integrity=\"sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa\" crossorigin=\"anonymous\"></script>
-    <script type=\"text/javascript\" src=\"js/myjs.js\"></script>
+    <script type=\"text/javascript\" src=\"js/myjs.min.js\"></script>
     <link rel=\"stylesheet\" href=\"./css/mcblocks.css\">
 {{HEADPERSO}}
 </head>
