@@ -6858,13 +6858,13 @@ body {
 }
 
 #footerlink a:link {
-    color: #9bd8eb;
+    color: #baebff;
 }
 #footerlink a:hover {
     color: #7cdabd;
 }
 #footerlink a:visited {
-    color: #65a1bb;
+    color: #bb7067;
 }
 
 .paddingbanniere {
@@ -6880,4 +6880,64 @@ body {
 }
 .float-left {
   float: left;
+}
+
+.center {
+  text-align: center;
+}
+
+
+.box-menu {
+  position: fixed;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  display: none;
+  float: left;
+  min-width: 740px;
+  max-width: 740px;
+  max-height: 800px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  text-align: left;
+  background-color: #888;
+  opacity: 0.9;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.statusbar
+{
+  position: fixed;
+  bottom: 5px;
+  left: 0px;
+  right: 0px;
+  height: 32px;
+  padding: 5px;
+
+  background: black;
+  color: white;
+  border: solid 1px lightgray;
+
+  opacity: .70;
+  filter: alpha(opacity="70");
+  z-index: 200;
+
+  overflow: hidden;
+  overflow-y: auto;
+}
+.statusbarhighlight
+{
+  font-weight: bold;
+  background-color: khaki;
+  color: Maroon;
+  border: solid 1px silver;
 }

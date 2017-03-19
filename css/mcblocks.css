@@ -10,8 +10,8 @@ body {
 }
 
 body {
-    background-color: #1d1d1d;
-    background-image: url(../images/bg.png)
+    background-color: #dbd4d6;
+    /*background-image: url(../images/bg.png)*/
 }
 
 #container a {
@@ -278,13 +278,13 @@ h1, #nav-toggle {
 .items-25-1-0 {
     width: 32px;
     height: 32px;
-    background: url(../images/sprites/items-25.png) 0 -32px no-repeat
+    background: url(../images/sprites/items-25.png) 0 -32px no-repeat;
 }
 
 .items-25-1-1 {
     width: 32px;
     height: 32px;
-    background: url(../images/sprites/items-25.png) 0 -64px no-repeat
+    background: url(../images/sprites/items-25.png) 0 -64px no-repeat;
 }
 
 .items-25-1-2 {
@@ -5323,4 +5323,8 @@ h1, #nav-toggle {
 
 .fancybox-ie #fancybox-bg-nw {
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancy_shadow_nw.png', sizingMethod='scale')
+}
+
+.centerimg div{
+    background-position: center;
 }

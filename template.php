@@ -76,9 +76,23 @@ function generepagehtml($tblhtml, $mess_translate)
                 if ($Infofr !== false):
                     $infoleft = '';
                     $infotmp = '';
-                    $commandlist = read_json('commandes_mc.json');
-                    if ($commandlist){
-                        $infoserveur = str_replace('{{COMMANDPLUS}}', generate_list_commandes($commandlist, $tblhtml['headperso']), $infoserveur);
+                    $commandList = read_json('commandes_mc.json');
+                    if ($commandList){
+                        $infoserveur = str_replace('{{COMMANDPLUS}}', generate_list_commandes($commandList,20 , $tblhtml['headperso']), $infoserveur);
+                        $itemsList = read_json('items.json');
+                        if($itemsList){
+                            //Afficher le bouton Ouvrir/Fermer box
+                            $btnItemsList = "
+            <button class=\"btn btn -default\" type=\"submit\" id='openbox'>{{MESS_OPENWINITEMS}} 
+                <span class='caret'></span>
+            </button>
+            <div class=\"box - menu\" id=\"box1 - menu\">";
+                            $infoserveur =  str_replace('{{BTNITEMSLIST}}', $btnItemsList, $infoserveur);
+                            $infoserveur =  str_replace('{{ITEMSPLUS}}', generate_items_commandes($itemsList,36, $tblhtml['headperso']), $infoserveur);
+                        } else {
+                            $infoserveur = str_replace('{{BTNITEMSLIST}}', '', $infoserveur);
+                            $infoserveur = str_replace('{{ITEMSPLUS}}', '', $infoserveur);
+                        }
                     } else {
                         $infoserveur = str_replace('{{COMMANDPLUS}}', '', $infoserveur);
                     }
@@ -182,7 +196,7 @@ function generepagehtml($tblhtml, $mess_translate)
     }
     $body .= "</body>\n</html>";
     $header = str_replace('{{HEADPERSO}}', $tblhtml['headperso'], $header);
-    return $header . translate_message($body, $mess_translate);
+    return translate_message($header, $mess_translate) . translate_message($body, $mess_translate);
 }
 
 /**

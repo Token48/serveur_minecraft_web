@@ -59,6 +59,8 @@ $mess_translate['{{MESS_ERREURFSOCKOPEN}}'] = 'alert-info,Minecraft,The server i
 
 //Commandes
 $mess_translate['{{MESS_LSTCOMMANDES}}'] = 'List of commands';
+$mess_translate['{{MESS_OPENWINITEMS}}'] = 'Open window items ';
+$mess_translate['{{MESS_CLOSEWINITEMS}}'] = 'Close window items ';
 
 // Mysql
 $mess_translate['{{MESS_ERREURCLOSEMYSQL}}'] = 'alert-danger, MySql, An error occurred when MySql was closed';
