@@ -9,3 +9,5 @@ Il n'y a pas encore de fichier pour l'installation des scripts.
 Copiez les fichiers de tout les répertoire sauf <b>install</b>. Vous trouverez dans le répertoire <b>install</b>
 le fichier <b>minecraft_serveur.zip</b>. Il contient un fichier SQL pour initialiser la base de données.
 
+<h3>19/03/2017 Ajout de l'affichage des items sélectionnable.</h3>
+Cette option possède quelque bug graphique si l'on réduit la fenêtre du navigateur.
