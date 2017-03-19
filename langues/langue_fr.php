@@ -63,6 +63,8 @@ $mess_translate['{{MESS_ERREURFSOCKOPEN}}'] = 'alert-info,Minecraft,Le serveur e
 
 //Commandes
 $mess_translate['{{MESS_LSTCOMMANDES}}'] = 'Liste des commandes';
+$mess_translate['{{MESS_OPENWINITEMS}}'] = 'Afficher les items ';
+$mess_translate['{{MESS_CLOSEWINITEMS}}'] = 'Masquer les items ';
 
 // Mysql
 $mess_translate['{{MESS_ERREURCLOSEMYSQL}}'] = 'alert-danger, MySql, Une erreur c\'est produite à la fermeture de MySql';
