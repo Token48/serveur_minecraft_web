@@ -79,7 +79,7 @@ $tab        <span class='caret'></span>
 $tab    </button>
 $tab    <div class=\"box-menu\" id=\"box1-menu\">";
     $lstItems = $objItems->{'items'};
-    $headPerso .="    <script type=\"text/javascript\">\n        var  lst_items = {";
+    $headPerso .="    <script type=\"text/javascript\">\n        var openwinitems = '{{MESS_OPENWINITEMS}}';\n        var closewinitems = '{{MESS_CLOSEWINITEMS}}';\n        var  lst_items = {";
     $balance = 0;
     foreach ($lstItems as $key=>$value){
         //$value[0] = id, $value[1] = icon, $value[2] = syntax
@@ -126,71 +126,6 @@ $tab    <div class=\"box-menu\" id=\"box1-menu\">";
     $tamponHtml .= "\n$tab    </div><!--box-menu-->";
     $tamponHtml .= "\n$tab    <!-- /Items -->\n";
     $headPerso .= "\n        }\n    </script>";
-    $headPerso .= "\n    <script>
-        $(function(){
-            $('#openbox').click(function(){
-                if($('#box1-menu').is(':hidden')){
-                    var pos = $('#openbox').findPosAbsolute();
-                    //dummy = $('#openbox').findPosAbsolute();
-                    var offsetX = -200;
-                    var offsetY = 32;                    
-                    var maxWidth = parseInt($('#box1-menu').css('max-width'));
-                    var maxHeight= 800;
-                    if (pos.x - offsetX < 0){
-                        offsetX =  pos.x - (pos.x * 2) // minimum position 0
-                    }
-                    if (offsetX + pos.x + maxWidth > $(window).width()){
-                        offsetX += $(window).width()-(offsetX + pos.x + maxWidth);
-                    }
-                    if (offsetY + pos.y + maxHeight > $(window).height()){
-                        var modifHeight =  maxHeight + ($(window).height() - (offsetY + pos.y + maxHeight));
-                        $('#box1-menu').css('max-height', modifHeight+'px');
-                    }
-                    $('#box1-menu').css({left: pos.x + offsetX, top: pos.y + offsetY, display: 'block'}); /* Afficher les items */
-                    $('#openbox').html(\"{{MESS_CLOSEWINITEMS}} <span class='caret'></span>\");
-                } else {
-                    $('#box1-menu').css({display: 'none'}); /* Masquer les items */
-                    $('#openbox').html(\"{{MESS_OPENWINITEMS}} <span class='caret'></span>\");
-                }
-            });
-            $(window).resize(function(){
-                if($('#box1-menu').is(':visible')) {
-                    var pos = $('#openbox').findPosAbsolute();
-                    var offsetX = -200;
-                    var offsetY = 32;
-                    var maxWidth = parseInt($('#box1-menu').css('max-width'));
-                    var maxHeight= 800;
-                    if (pos.x - offsetX < 0){
-                        offsetX =  pos.x - (pos.x * 2) // minimum position 0
-                    }
-                    if (offsetX + pos.x + maxWidth > $(window).width()){
-                        offsetX += $(window).width()-(offsetX + pos.x + maxWidth);
-                    }
-                    if (offsetY + pos.y + maxHeight > $(window).height()){
-                        var modifHeight =  maxHeight + ($(window).height() - (offsetY + pos.y + maxHeight));
-                        $('#box1-menu').css('max-height', modifHeight+'px');
-                    }
-                    //showStatus('box1-menu =('+pos.x+'+'+offsetX+','+pos.y+'+'+offsetY+')', 8000);
-                    $('#box1-menu').css({ left: pos.x + offsetX, top: pos.y + offsetY});
-                }
-            });
-            $('.iditems').click(function(){
-                var id2 = $(this).attr('id'); //id de <a>
-                var id2Tag = '';
-                var id1 = $('div:first', this).attr('id'); //id de <a>-><div>
-                var pos = id2.indexOf(\":\");
-                if (pos != -1){
-                    //extraire le tag
-                    var id2Tag = id2.substr(pos+1);
-                }
-                $('#livalue').val($('#livalue').val() + id1 + ' 1 '+ id2Tag);
-                $('#livalue').focus(); //donner le focus à livalue
-                showStatus(id1+','+id2Tag, 4000);
-                $('#box1-menu').css({display: 'none'});/*Fermé la box*/
-                $('#openbox').html(\"Ouvrir la box <span class='caret'></span>\");
-            });
-        });
-    </script>";
     return $tamponHtml;
 }
 ?>
