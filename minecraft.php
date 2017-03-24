@@ -6,7 +6,7 @@
 use xPaw\MinecraftQuery;
 use xPaw\MinecraftQueryException;
 
-if (defined('INDEXPHP')) {
+if (defined('INDEXPHP') || defined('AJAXPHP')) {
     require_once('class/Rcon.class.php');
     require_once('lib/includes.php');
 } else {

@@ -17,9 +17,10 @@ function retMktimest($dbdate)
  * pour afficher le formulaire de modification server.properties
  * ou une chaine vide si il y a un problème.
  *
- * @param
- *            chemin du fichier de configuration ($config['ftp']['serverproperties'])
- * @return mixed array Formulaire HTML or false
+ * @param string $configfile <p>
+ * chemin du fichier de configuration ($config['ftp']['serverproperties'])
+ * </p>
+ *  * @return mixed array Formulaire HTML or FALSE
  */
 function readserverproperties($configfile)
 {
@@ -258,4 +259,65 @@ function generate_message($messagecomplet, $messageformat)
     $messageformat = str_replace('{{message[2]}}', $message[2], $messageformat); //message de l'alerte
     return $messageformat;
 }
+
+/**
+ * @param $tampon string
+ * @param $mess_translate array
+ * @return string
+ */
+function translate_message($tampon, $mess_translate)
+{
+    foreach ($mess_translate as $key => $value) {
+        $tampon = str_replace($key, $value, $tampon);
+    }
+    return $tampon;
+}
+
+function getInfoPlayers($query, $config, $mess_translate){
+    $infoplayers = '';
+    if (($Players = $query->GetPlayers()) !== false) {
+        $ctrllvlsql = true; //Par défaut on contrôle le lvl utilisateur
+        $mysqli = new mysqli($config['Database']['host'], $config['Database']['dbuser'], $config['Database']['dbpass'], $config['Database']['dbname'], $config['Database']['port']);
+        if ($mysqli->connect_errno) {
+            $ctrllvlsql = false; //Problème avec MySQL on ne contrôle pas le lvl
+        }
+        foreach ($Players as $Player) {
+            $lvl = 0; //Par défaut le joueur en ligne est lvl zéro
+            if ($ctrllvlsql) {
+                $uname = $mysqli->real_escape_string($Player);
+                $requete = "SELECT ".$config['Database']['tableprefix']."utilisateurs.levelutilisateur_lvlmembre FROM ".$config['Database']['tableprefix']."utilisateurs WHERE utilisateurs.username = '$uname'";
+                //Rechercher si la personne qui se trouve sur le serveur est dans la base de données
+                $result = $mysqli->query($requete);
+                if ($result) {
+                    //lvl trouvé
+                    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+                        foreach ($row as $key => $don) {
+                            $lvl = $don; //Récupérer le lvl
+                        }
+                    }
+                } else {
+                    //On peut eventuellement ici kické la personne du serveur si elle n'est pas inscrit ici
+                    //à l'aide d'une commande rcon...
+                }
+            }
+            $infoplayers .= "<tr>
+                            <td><span  class=\"lvluser" . $lvl . "\">" . htmlspecialchars($Player) . "</span></td>
+                        </tr>";
+        }
+        if ($ctrllvlsql) {
+            //Fermer MySQL
+            $closemysqli = $mysqli->close();
+            if (!$closemysqli) {
+                throw new Exception(MESS_ERREURCLOSEMYSQL);
+            }
+        }
+    }
+    else {
+        $infoplayers .= "                <tr>
+                    <td>".str_replace('{{MESS_NOTPLAYERSFOUND}}', $mess_translate['{{MESS_NOTPLAYERSFOUND}}'], '{{MESS_NOTPLAYERSFOUND}}')."</td>
+                </tr>";
+    }
+    return $infoplayers;
+}
+
 ?>
