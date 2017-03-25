@@ -1,6 +1,8 @@
 <?php
 
 require_once ('commandes.php');
+require_once ('lib/includes.php');
+
 function generepagehtml($tblhtml, $mess_translate)
 {
     $body = '';
@@ -116,53 +118,14 @@ function generepagehtml($tblhtml, $mess_translate)
                     endforeach;
                     $infoleft . "                </tr>";
                     $infoserveur = translate_message($infoserveur, array('{{infoleft}}' => $infoleft));
-                    $infoplayers = '';
-                    if (($Players = $tblhtml['Query']->GetPlayers()) !== false) {
-                        $ctrllvlsql = true; //Par défaut on contrôle le lvl utilisateur
-                        $mysqli = new mysqli($config['Database']['host'], $config['Database']['dbuser'], $config['Database']['dbpass'], $config['Database']['dbname'], $config['Database']['port']);
-                        if ($mysqli->connect_errno) {
-                            $ctrllvlsql = false; //Problème avec MySQL on ne contrôle pas le lvl
-                        }
-                        foreach ($Players as $Player) {
-                            $lvl = 0; //Par défaut le joueur en ligne est lvl zéro
-                            if ($ctrllvlsql) {
-                                $uname = $mysqli->real_escape_string($Player);
-                                $requete = "SELECT ".$config['Database']['tableprefix']."utilisateurs.levelutilisateur_lvlmembre FROM ".$config['Database']['tableprefix']."utilisateurs WHERE utilisateurs.username = '$uname'";
-                                //Rechercher si la personne qui se trouve sur le serveur est dans la base de données
-                                $result = $mysqli->query($requete);
-                                if ($result) {
-                                    //lvl trouvé
-                                    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-                                        foreach ($row as $key => $don) {
-                                            $lvl = $don; //Récupérer le lvl
-                                        }
-                                    }
-                                } else {
-                                    //On peut eventuellement ici kické la personne du serveur si elle n'est pas inscrit ici
-                                    //à l'aide d'une commande rcon...
-                                }
-                            }
-                            $infoplayers .= "                <tr id='playername'>
-                    <td><span  class=\"lvluser" . $lvl . "\">" . htmlspecialchars($Player) . "</span></td>
-                </tr>";
-                        }
-                        if ($ctrllvlsql) {
-                            //Fermer MySQL
-                            $closemysqli = $mysqli->close();
-                            if (!$closemysqli) {
-                                throw new Exception(MESS_ERREURCLOSEMYSQL);
-                            }
-                        }
-                    } else {
-                        $infoplayers .= "                <tr>
-                    <td>{{MESS_NOTPLAYERSFOUND}}</td>
-                </tr>";
-                    }
+                    $infoPlayers = getInfoPlayers($tblhtml['Query'], $config, $mess_translate);
                     $infoserveur = str_replace('{{TIMER}}', $tblhtml['timer'], $infoserveur);
-                    $infoserveur = str_replace('{{JOUEURS}}', $infoplayers, $infoserveur);
+                    $infoserveur = str_replace('{{JOUEURS}}', $infoPlayers, $infoserveur);
+                    $tblhtml['headperso'] .= "\n    <script type=\"text/javascript\">\n        $(function(){
+            setInterval('horloge()',10000);
+        })\n    </script>\n";
                     $body .= $infoserveur;
                 else:
-                    //$body .= $infoserveur;
                     $body .= $notinfoserveur;
                 endif;
                 break;
@@ -197,17 +160,4 @@ function generepagehtml($tblhtml, $mess_translate)
     $body .= "</body>\n</html>";
     $header = str_replace('{{HEADPERSO}}', $tblhtml['headperso'], $header);
     return translate_message($header, $mess_translate) . translate_message($body, $mess_translate);
-}
-
-/**
- * @param $tampon string
- * @param $mess_translate array
- * @return string
- */
-function translate_message($tampon, $mess_translate)
-{
-    foreach ($mess_translate as $key => $value) {
-        $tampon = str_replace($key, $value, $tampon);
-    }
-    return $tampon;
 }
