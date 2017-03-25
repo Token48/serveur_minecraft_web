@@ -275,17 +275,24 @@ function translate_message($tampon, $mess_translate)
 
 function getInfoPlayers($query, $config, $mess_translate){
     $infoplayers = '';
-    if (($Players = $query->GetPlayers()) !== false) {
+    if (($players = $query->GetPlayers()) !== false) {
         $ctrllvlsql = true; //Par défaut on contrôle le lvl utilisateur
         $mysqli = new mysqli($config['Database']['host'], $config['Database']['dbuser'], $config['Database']['dbpass'], $config['Database']['dbname'], $config['Database']['port']);
         if ($mysqli->connect_errno) {
             $ctrllvlsql = false; //Problème avec MySQL on ne contrôle pas le lvl
         }
-        foreach ($Players as $Player) {
+        $width = 0;
+        $cr = "\n";
+        $nbElements = 1;
+        foreach ($players as $player) {
             $lvl = 0; //Par défaut le joueur en ligne est lvl zéro
+            if ($nbElements == count($players)){
+                $cr = "";
+            }
+            $nbElements ++;
             if ($ctrllvlsql) {
-                $uname = $mysqli->real_escape_string($Player);
-                $requete = "SELECT ".$config['Database']['tableprefix']."utilisateurs.levelutilisateur_lvlmembre FROM ".$config['Database']['tableprefix']."utilisateurs WHERE utilisateurs.username = '$uname'";
+                $uname = $mysqli->real_escape_string($player);
+                $requete = "SELECT ".$config['Database']['tableprefix']."utilisateurs.levelutilisateur_lvlmembre FROM ".$config['Database']['tableprefix']."utilisateurs WHERE ".$config['Database']['tableprefix']."utilisateurs.username = '$uname'";
                 //Rechercher si la personne qui se trouve sur le serveur est dans la base de données
                 $result = $mysqli->query($requete);
                 if ($result) {
@@ -300,9 +307,22 @@ function getInfoPlayers($query, $config, $mess_translate){
                     //à l'aide d'une commande rcon...
                 }
             }
-            $infoplayers .= "<tr>
-                            <td><span  class=\"lvluser" . $lvl . "\">" . htmlspecialchars($Player) . "</span></td>
-                        </tr>";
+            if ($width == 0){
+                $balise_TrDeb = "<tr>\n";
+                $balise_TrFin = "";
+            } elseif ($width != 3){
+                $balise_TrDeb = "";
+                $balise_TrFin = "";
+            } else {
+                $balise_TrDeb = "";
+                $balise_TrFin = "                       </tr>$cr";
+            }
+            $infoplayers .= "$balise_TrDeb                            <td><span  class=\"lvluser" . $lvl . "\">" . htmlspecialchars($player) . "</span></td>
+$balise_TrFin";
+            ($width == 3) ? $width = 0 : $width++;
+        }
+        if ($width != 0){
+            $infoplayers .="                        </tr>$cr"; //fermer TR
         }
         if ($ctrllvlsql) {
             //Fermer MySQL
