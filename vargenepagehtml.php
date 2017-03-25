@@ -231,7 +231,7 @@ $infoserveur = "<!-- INFO SERVEUR -->
                 <table class=\"table table-bordered table-striped\">
                     <thead>
                         <tr>
-                            <th>{{MESS_PLAYERS}}</th>
+                            <th colspan='{{colspanPlayerName}}' id='colspanPlayerName'>{{MESS_PLAYERS}}</th>
                         </tr>
                     </thead>
                     <tbody id='playersname'>

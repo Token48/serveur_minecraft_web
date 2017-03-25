@@ -19,12 +19,16 @@ switch ($request) {
     case 'playersname':
         $playersName = get_players_connect($config);
         if ($playersName !== false) {
+            $valColspan = substr_count($playersName,'<td>');
+            if ($valColspan>4){
+                $valColspan = 4;
+            }
             //{"reponse":"Anne-Sohpie,Zembla,Raoul,Nicholas"}
-            echo json_encode(array('reponse' => $playersName));
+            echo json_encode(array('reponse' => $playersName, 'colspan' => strval($valColspan)));
         }
         break;
     default:
-        echo json_encode(array('reponse' => '-1')); //invalide
+        echo json_encode(array('reponse' => '-1', 'colspan' => '1')); //invalide
 }
 
 function get_players_connect($config){

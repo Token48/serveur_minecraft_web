@@ -121,6 +121,11 @@ function generepagehtml($tblhtml, $mess_translate)
                     $infoPlayers = getInfoPlayers($tblhtml['Query'], $config, $mess_translate);
                     $infoserveur = str_replace('{{TIMER}}', $tblhtml['timer'], $infoserveur);
                     $infoserveur = str_replace('{{JOUEURS}}', $infoPlayers, $infoserveur);
+                    $valColspan = count($tblhtml['Query']->GetPlayers());
+                    if ($valColspan>4){
+                        $valColspan = 4;
+                    }
+                    $infoserveur = str_replace('{{colspanPlayerName}}', $valColspan,$infoserveur);
                     $tblhtml['headperso'] .= "\n    <script type=\"text/javascript\">\n        $(function(){
             setInterval('horloge()',10000);
         })\n    </script>\n";
